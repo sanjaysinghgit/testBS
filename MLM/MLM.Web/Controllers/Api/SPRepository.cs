@@ -72,6 +72,7 @@ namespace MLM
                         IntroducerCode = reader["IntroducerCode"].ToString(),
                         Position = (AgentPosition)Convert.ToInt16(reader["Position"]),
                         Status = (AgentStatus)Convert.ToInt16(reader["status"]),
+                        AgentName = reader["Name"].ToString(),
                     };
                     AgentTreeViewModelData.Add(agentTreeViewModel);
                 }

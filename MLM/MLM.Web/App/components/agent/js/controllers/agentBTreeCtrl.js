@@ -40,9 +40,36 @@
                     parent: item.SponsorCode,
                     position: item.Position,
                     status: item.Status,
+                    statusName: AgentStatus(item),
+                    agentName: item.AgentName,
+
                 };
             }());
         });
+
+        function AgentStatus(d) {
+            var status;
+            switch (d.Status) {
+                case 1:
+                    status = "Available";
+                    break;
+                case 2:
+                    status = "Pedning";
+                    break;
+                case 3:
+                    status = "Associate";
+                    break;
+                case 4:
+                    status = "Executive";
+                    break;
+                case 5:
+                    status = "Suspend";
+                    break;
+                default:
+                    status = "Unknown";
+            }
+            return status;
+        }
 
         //parent: function () {
         //    if ($scope.context == 'Binary')
@@ -182,8 +209,33 @@
 
                 .style("stroke", function (d) { return d.position * 5; })
                 .style("fill", function (d) {
-                    return d._children ? "lightsteelblue" : (d.position === 1 ? "green" : "yellow");
+                    return d._children ? "plum" : AgentStatusColor(d);
                 });
+
+            function AgentStatusColor(s) {
+                var color;
+                switch (s.Status) {
+                    case 1:
+                        color = "lightsteelblue";
+                        break;
+                    case 2:
+                        color = "yellow";
+                        break;
+                    case 3:
+                        color = "steelblue";
+                        break;
+                    case 4:
+                        color = "mediumseagreen";
+                        break;
+                    case 5:
+                        color = "tomato";
+                        break;
+                    default:
+                        color = "DarkCyan";
+                }
+                console.log(color);
+                return color;
+            }
 
             nodeUpdate.select("text")
                 .style("fill-opacity", 1);
@@ -207,6 +259,7 @@
             // Enter any new links at the parent's previous position.
             link.enter().insert("path", "g")
                 .attr("class", "nodelink")
+                .attr("stroke", function (d) { console.log(d); return (d.target.position == 1 ? "springgreen" : "lightskyblue"); })
                 .attr("d", function (d) {
                     var o = { x: source.x0, y: source.y0 };
                     return diagonal({ source: o, target: o });
@@ -243,7 +296,12 @@
 
             function mousemove(d) {
                 div
-                .text("Info about " + d.name + ":" + d.info)
+                .html("Agent Name: <b>" + d.agentName + "</b>"
+                + "</br>Code: <b>" + d.name + "</b>"
+                + "</br>Status: <b>" + d.statusName + "</b>"
+                + "</br>Position: <b>" + (d.position == 1 ? "Left" : "Right") + "</b>"
+                )
+
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY) + "px");
             }
@@ -253,6 +311,7 @@
                 .duration(300)
                 .style("opacity", 1e-6);
             }
+
 
 
         }
@@ -268,7 +327,7 @@
             }
             update(d);
         }
-
+        
 
         // var adata = [
         //{ "name": "Level 2: A", "parent": "Top Level" },

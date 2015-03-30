@@ -18,6 +18,8 @@ namespace MLM.Models
         public string IntroducerCode { get; set; }
         public AgentPosition Position { get; set; }
         public AgentStatus Status { get; set; }
+        public string AgentName { get; set; }
+
     }
 
 }
