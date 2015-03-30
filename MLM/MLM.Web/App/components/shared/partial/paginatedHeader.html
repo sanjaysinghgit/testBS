@@ -1,0 +1,10 @@
+﻿ <section class="bulk-list-utilities">
+     <div class="bulk-list-utility">
+         <span data-ng-show="!paginator.searching && paginator.totalRecords > 0">
+             {{paginator.firstRecord}}-{{paginator.lastRecord}} {{t('common.of')}} {{paginator.totalRecords}} {{label}}
+         </span>
+         <span data-ng-show="paginator.searching">
+             {{t('common.finding_items').format(paginator.label)}} ...
+         </span>
+     </div>
+ </section>

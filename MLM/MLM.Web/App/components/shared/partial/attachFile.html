@@ -1,0 +1,12 @@
+﻿<div hide-if-mobile>
+    <span ng-show="!fileSelected">
+        <div class="btn clear btn-file-input"
+             ng-disabled="submitting">
+            Attach file <span class="asphalt-txt not-mobile">({{t('loop.max_upload')}})</span>
+            <input type="file" id="file-upload" name="file-upload" ng-model="somethingelse" />
+        </div>
+    </span>
+    <span class="fileName" ng-click="cancelFile()" ng-show="fileSelected">
+        {{fileName}}
+    </span>
+</div>

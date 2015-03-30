@@ -1,0 +1,113 @@
+@model MLM.Web.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<div id="content">
+    <div class="container">
+
+        <div class="page-content">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <section id="loginForm">
+                        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <h4>Create a new account.</h4>
+                            <hr />
+                            @Html.ValidationSummary()
+                            @*<div class="form-group">
+                                @Html.LabelFor(m => m.UserName, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                                </div>
+                            </div>*@
+
+                            @*<div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                                </div>
+                            </div>*@
+                                            <div class="form-group">
+                    @Html.LabelFor(m => m.Position, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        
+                            @Html.RadioButtonFor(model => model.Position, "1", new { id = "left", @checked = true })
+                            @Html.Label("left", "Left")
+                        
+                            @Html.RadioButtonFor(model => model.Position, "2", new { id = "right" })
+                            @Html.Label("right", "Right")
+                      
+                    </div>
+            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.SponsorCode, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    <span class="field-validation-valid" id="msgAgentApplicableSponsorCode"></span>
+                                    @Html.TextBoxFor(m => m.SponsorCode, new { @class = "form-control" })
+                                    @Html.HiddenFor(m => m.AgentApplicableSponsorCode)
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.DOB, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.DOB, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.PhoneNumber, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" class="btn btn-default" value="Register" />
+                                </div>
+                            </div>
+                        }
+                    </section>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/mvcapp")
+
+}

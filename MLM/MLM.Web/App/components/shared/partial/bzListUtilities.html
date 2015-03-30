@@ -1,0 +1,24 @@
+<section class="bulk-list-utilities">
+    <div class="bulk-list-utility">
+        <bz-pagination-status
+            paginator="paginator">
+        </bz-pagination-status>
+    </div>
+    <div class="bulk-list-utility">
+         <button ng-show="showActionButton" 
+            permission="{{actionPermission}}"
+            type="submit"
+            ng-init="inviting=false;"
+            ng-click="action()">
+            {{actionButtonText}}
+        </button>
+        <div ng-if="paginator.sortOptions.length > 1" 
+            class="bz-select">
+            <select class="sorting-dropdown"
+                	title="Sorting options"
+                	ng-model="paginator.query.sort"
+                	ng-options="v.field as v.name for v in paginator.sortOptions">
+            </select>
+        </div>
+    </div>
+</section>

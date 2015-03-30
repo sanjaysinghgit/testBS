@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLM.Web", "MLM.Web\MLM.Web.csproj", "{4C6BEFB2-E1A3-4CA2-9517-4EF3DBC07B9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLM.Models", "MLM.API.Models\MLM.Models.csproj", "{D18C3567-E658-4190-ADEB-D470CF0BAF55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLM.Utilities", "MLM.Utilities\MLM.Utilities.csproj", "{646DD922-4A8A-4729-BDC1-63B258E11182}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C6BEFB2-E1A3-4CA2-9517-4EF3DBC07B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6BEFB2-E1A3-4CA2-9517-4EF3DBC07B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6BEFB2-E1A3-4CA2-9517-4EF3DBC07B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6BEFB2-E1A3-4CA2-9517-4EF3DBC07B9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D18C3567-E658-4190-ADEB-D470CF0BAF55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D18C3567-E658-4190-ADEB-D470CF0BAF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D18C3567-E658-4190-ADEB-D470CF0BAF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D18C3567-E658-4190-ADEB-D470CF0BAF55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{646DD922-4A8A-4729-BDC1-63B258E11182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646DD922-4A8A-4729-BDC1-63B258E11182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646DD922-4A8A-4729-BDC1-63B258E11182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646DD922-4A8A-4729-BDC1-63B258E11182}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+﻿<div class="loop-uservoice-feedback ui-block">
+    <div class="loop-uservoice-prompt ui-block">
+        <p>{{t('uservoiceFeedback.feedback_text')}}</p>
+        <p>{{t('uservoiceFeedback.feedback_endtext')}}</p>
+        <button id="btnUserVoice" type="submit" 
+            class="uservoice-btn" 
+            ng-click="showWidget();">
+            {{t('uservoiceFeedback.button_text')}}
+        </button>
+    </div>  
+    <a  target="_blank" 
+        class="loop-support-prompt ui-block"
+        href="/support/{{developmentId}}">
+        <h6>{{t('uservoiceFeedback.support_text')}}</h6>
+        {{t('uservoiceFeedback.support_endtext')}}
+    </a>
+</div>

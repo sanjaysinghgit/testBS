@@ -1,0 +1,11 @@
+﻿<span>
+    <span class="short-role-name" ng-switch="link">
+        <a ng-switch-when="true" ng-href="{{profileLink}}">{{roleName}}
+        </a>
+        <span ng-switch-default ng-class="removedUser ? 'former-user' : ''">{{roleName}}
+        </span>
+    </span>
+    <span class="short-role-context" ng-show="roleTitle || roleContext">{{roleTitle}}
+        <span ng-show="roleContext">-{{roleContext}}</span>
+    </span>
+</span>

@@ -1,0 +1,7 @@
+﻿<nav class="tabs">
+    <ul class="tabs-list">
+         <li  permission="{{link.permission}}" class="tab" ng-repeat="link in links" ng-click="setActive($index)" ng-class="{active:link.active}">
+            <a ng-href="{{link.link}}">{{link.title}}</a>
+        </li>
+    </ul>
+</nav>

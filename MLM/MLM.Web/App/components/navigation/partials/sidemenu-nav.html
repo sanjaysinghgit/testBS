@@ -1,0 +1,167 @@
+﻿<nav class="sidemenu" 
+     id="bzng-nav" 
+     toggle="navigationOn"
+     toggle-default="show"
+     ng-swipe-left="closeMenu()">
+
+    <figure class="bazinga-logo">
+        <span class="ico-word-mark"></span>
+        <span class="ico-logo-mark"></span>
+    </figure>
+
+    <a  class="sidemenu-item"
+        ng-class="{active: currentSection === 'loop'}"
+        ng-click="navClicked('loop')"
+        ng-href="/developments/{{development.id}}/loop">
+        <span class="ico-loop"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.loop')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item"
+        ng-class="{active: currentSection === 'messages'}"
+        ng-click="navClicked('messages')"
+        ng-href="/developments/{{development.id}}/privateMessages">
+        <span class="ico-messages"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.private_messages')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item"
+        toggle="csaOn"
+        permission="can_access_csa"
+        ng-click="navClicked('csa')"
+        ng-class="{active: currentSection === 'csa'}"
+        ng-href="/developments/{{development.id}}/buildings">
+        <span class="ico-deficiencies"></span>
+        <span class="sidemenu-label">
+            {{t('building.appName')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item" permission="can_manage_tickets"
+        ng-click="navClicked('concierge')"
+        ng-class="{active: currentSection === 'concierge'}"
+        ng-href="/developments/{{developmentId}}/care/tickets"
+        toggle="conciergeOn" 
+        toggle-default="hide">
+        <span class="ico-residentcare"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.resident_care')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item" permission="!can_manage_tickets"
+        ng-click="navClicked('concierge')"
+        ng-class="{active: currentSection === 'concierge'}"
+        ng-href="/developments/{{developmentId}}/care"
+        toggle="conciergeOn" 
+        toggle-default="hide">
+        <span class="ico-residentcare"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.resident_care')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item myhome"
+        ng-show="myHome"
+        ng-class="{active: currentSection === 'myhome'}"
+        ng-click="navClicked('myhome')"
+        ng-href="{{myHomeUrl}}">
+        <span class="ico-yourhome"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.my_home')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item"
+        ng-class="{active: currentSection === 'people'}"
+        ng-click="navClicked('people')"
+        ng-href="/developments/{{development.id}}/people">
+        <span class="ico-people"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.people')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item"
+        permission="can_read_all_member_info"
+        ng-class="{active: currentSection === 'units'}"
+        ng-click="navClicked('units')"
+        ng-href="/developments/{{development.id}}/units">
+        <span class="ico-units"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.units')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item"
+        ng-if="amenities.count > 0"
+        ng-class="{active: currentSection === 'amenities'}"
+        ng-click="navClicked('amenities')"
+        ng-href="/developments/{{development.id}}/amenities">
+        <span class="ico-amenities"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.amenities')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item"
+        ng-class="{active: currentSection === 'documents'}"
+        ng-click="navClicked('documents')"
+        ng-href="/developments/{{development.id}}/documents">
+        <span class="ico-documents"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.documents')}}
+        </span>
+    </a>
+
+    <a class="sidemenu-item"
+       ng-click="navClicked('neighbourhood')"
+       ng-class="{active: currentSection === 'neighbourhood'}"
+       ng-href="/developments/{{development.id}}/neighbourhood/featured"
+       toggle="neighbourhoodsOn" 
+       toggle-default="hide">
+        <span class="ico-neighbourhood"></span>
+        <span class="sidemenu-label">
+            {{t('navigation.neighbourhood')}}
+        </span>
+    </a>
+
+    <a  class="sidemenu-item" 
+        permission="can_access_admin_panel"
+        href="/adminpanel/adminhome"
+        target="_self">
+        <span class="sidemenu-label">
+            {{t('navigation.admin')}}
+        </span>
+    </a>
+
+    <!-- Profile -->
+    <div class="sidemenu-profile"
+         ng-class="{active: currentSection === 'profile'}">
+
+        <avatar small
+                class="sidemenu-avatar"
+                src="user.images[0].url"></avatar>
+
+        {{user.name.formatted}} <br/>
+
+        <a  class="sidemenu-profile-link" 
+            ng-click="navClicked('profile')"
+            ng-class="{active: currentSection === 'profile'}"
+            ng-href="/developments/{{development.id}}/profile">
+            View profile
+        </a>
+
+        <a  class="sidemenu-signout" 
+            ng-click="logout()"
+            href="#">
+            {{t('navigation.signout')}}
+        </a>
+
+    </div>
+    
+</nav>

@@ -1,0 +1,25 @@
+﻿<div id="content">
+    <div class="container">
+        <div class="page-content">
+
+                <div>
+                    <h1>
+                        Agents List
+                    </h1>
+                </div>
+
+            <ul>
+                <li data-ng-if="loading">
+                    <div>
+                        <div mlm-spinner small></div>
+                    </div>
+                </li>
+                <li ng-repeat="agt in agents.items">
+                    <div>{{agt.Code}}</div>
+                    <!--<div>{{agt.SponsorCode}}</div>-->
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,175 @@
+<div data-layout="one-column">
+    
+    <section class="page-content">
+
+
+    	<div 	class="cross-column-nav" 
+    			ng-show="breadcrumblink != undefined">
+			<div class="cross-column-nav-item">
+				<h5>
+					<a href="{{breadcrumblink}}">
+						{{breadcrumbtext}}
+					</a> 
+					<span class="asphalt-txt">
+						&rsaquo; <span>{{containerName | htmlDecode}}</span>
+					</span>
+				</h5>
+			</div>
+		</div>	
+
+		<div class="bulk-list-container">
+
+	        <a ng-show="flash" href="{{flashLink}}">
+	        	<div class="{{flashMessageClass}}">
+	        		<span ng-bind-html="flashMessage"></span>
+	        	</div>
+	        </a>
+
+			<div class="bulk-list-utilities" >
+				<div class="bulk-list-utility">
+			    	{{files.length}} {{t('common.files')}}
+			    </div>
+			    <form 
+					id="fileUploadForm" 
+					name="fileUploadForm" 
+					novalidate 
+					method="POST" 
+					action="" 
+					enctype="multipart/form-data" 
+					class="clear bulk-list-utility"
+					ng-if="showuploadButton">
+		            <span 
+		            	class="btn primary btn-file-input" 
+		            	permission="{{context === 'units' && 'can_manage_unit_docs' || 'can_manage_public_docs' }}">
+		                <span>
+		                    <span ng-hide="newFile">
+		                    	{{t('common.upload_new')}}
+		                    </span>
+		                    <span ng-show="newFile">
+		                    	{{t('common.change_file')}}
+		                    </span>
+		                </span>
+		                <input 
+		                    ng-if="!submitting"
+		                	type="file" 
+		                	upload-file-button 
+		                	todo="showNewFileInfo()" 
+		                	id="fileupload" 
+		                	submit="{{submitting}}" 
+		                	name="fileupload" 
+		                	ng-model="fileNameToUpload"/>
+		            </span>
+		        </form>
+			</div>
+			
+			<ul class="bulk-list">      
+		    	<li class="bulk-list-item file-list-item" 
+		    		ng-if="submitting && !files">
+					<div class="bulk-list-status-msg">
+						<div bz-spinner small></div>
+					</div>
+				</li>
+				<!-- Empty List -->
+			    <li class="bulk-list-item" 
+			    	ng-if="files.length === 0 && !newFile">
+			        <div class="bulk-list-empty">
+			           {{t('errors.no_files_found')}} 
+			        </div>
+			    </li>
+				<li class="bulk-list-item file-list-item" 
+					ng-show="newFile">
+				    <div class="file-list-item-content bulk-list-item-content file-list-item-edit">
+				        <div class="file-list-item-icon" 
+				        	data-file-type>
+				        	{{t('common.new')}}
+				        </div>
+				        <div class="file-list-item-name">
+				           	<h6 class="pull-left new-file-name">{{fileName}}</h6>
+	                        <div class="pull-right">    
+	                            <button type="submit" 
+                                    class="btn-spaced"
+	                                ng-class="{'btn-loading' : submitting}"
+				           			ng-click="uploadFile()"
+				           			ng-disabled="submitting">
+				           			<span bz-spinner small ng-if="submitting"></span>
+				           			{{t('common.upload')}}
+				           		</button>
+	                        </div>
+	                        <button class="pull-right btn-spaced" 
+	                        	ng-click="hideNewFileInfo()" 
+	                        	ng-disabled="submitting">
+	                        	{{t('common.cancel')}}
+	                        </button>
+				        </div>
+				    </div>
+				</li>  
+			</ul>
+			<ul class="bulk-list">  
+				<li ng-repeat="file in files" 
+					class="bulk-list-item file-list-item">
+	                <div class="file-list-item-content bulk-list-item-content" 
+	                     ng-show="!file.deleted && !editFile(file.id)">
+	                    <a href="{{buildFileDetailLink( file.id )}}">
+	                        <file-icon url="{{file.url}}" mime-type="{{file.mimeType}}"></file-icon>
+	                        <h6 class="file-list-item-name">
+	                            {{file.displayName}}
+	                        </h6>
+	                        <span class="file-list-item-modified" 
+	                              title="{{ file.published.utc | date:'MMM dd, yyyy -  h:mm a'}}">
+	                            {{ file.published.utc | relativeTime }}
+	                        </span>
+	                    </a>
+					    <a href="#" class="edit-file-btn not-mobile not-tablet"
+					    	permission="{{showuploadButton && (context === 'units' && 'can_manage_unit_docs' || 'can_manage_public_docs') }}"  
+					    	ng-click="editFile(file.id,true)">
+					        {{t('common.edit')}}
+					    </a>
+	                </div>
+	                <ng-form 
+	                	name="editFileForm"
+	                	class="file-list-item-content bulk-list-item-content file-list-item-edit"
+	                	ng-show="editFile(file.id)">
+				        <file-icon url="{{file.url}}" mime-type="{{file.mimeType}}"></file-icon>
+				        <div class="file-list-item-name">
+				            <input 
+				                type="text"
+				                name="filename" 
+				                required 
+				                bz-validate
+				                ng-maxlength="64"
+				                ng-model="newFileName" 
+				                ng-init="newFileName = file.displayName"
+				                />
+				            <div class="save-cancel">
+				              
+				                <button 
+				                    type="submit"
+                                    class="btn-spaced"
+				                    ng-class="{'btn-loading': submitting}" 
+				                    ng-disabled="editFileForm.$invalid || submitting" 
+				                    ng-click="
+			           	    		updateFileName(file.id, newFileName);
+			           	    		file.displayName=newFileName;
+			           	    		editFile(file.id,false);
+			           	    	">
+				                    <span bz-spinner small ng-if="submitting"></span>
+				                    {{t('common.save')}}
+				                </button>
+				                <button class="btn-spaced"
+                                      	ng-disabled="submitting" 
+                                    	ng-click="editFile(file.id,false)">
+				                    {{t('common.cancel')}}
+				                </button>
+				            </div>
+			           	    <br/>
+			           	    <a href="#" class="critical" ng-click="deleteFile(file)">
+			           	    	{{t('documents.delete_file')}}
+			           	    </a>
+				        </div>
+				    </ng-form>
+				</li>
+			</ul>
+		</div>	    
+	    
+    </section>
+</div>

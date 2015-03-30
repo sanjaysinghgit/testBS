@@ -1,0 +1,61 @@
+﻿<header class="page-header" 
+		ng-class="{ 'page-header-with-image': development.coverImage }">
+
+	<div class="page-header-image mq-above-tablet"
+	 	 ng-if="development.coverImage"
+	 	 ng-style="{'background-image': 'url({{development.coverImage}})'}">
+	 </div>
+
+	<div class="page-header-content">
+
+		<div class="page-header-image mq-upto-tablet"
+		 	ng-if="development.coverImage"
+		 	ng-style="{'background-image': 'url({{development.coverImage}})'}">
+		 </div>
+
+        <h1 class="not-mobile">
+        	<i ng-class="{ 
+        		'ico-bldg-large':!development.coverImage, 
+        		'ico-bldg-large-white':development.coverImage }"></i>
+        	<span>{{development.displayName}}</span>
+        </h1>        
+
+    	<h2 class="mobile-only">
+    		<i ng-class="{ 
+    			'ico-bldg-large':!development.coverImage, 
+    			'ico-bldg-large-white':development.coverImage }"></i>
+    		<br/>
+    		{{development.displayName}}
+    	</h2>
+
+	</div>
+
+	<nav 	class="page-header-nav" 
+			id="page-header-nav">
+
+		<input 	id="toggle-page-header-nav" 
+				name="mobile-nav-toggle" 
+				class="toggle-page-header-nav" 
+				type="checkbox"/>
+
+		<span class="toggle-page-header-nav-text">
+			Select a page...
+		</span>
+
+		<label for="toggle-page-header-nav" 
+			class="toggle-page-header-nav-shim"></label>
+
+		<ul class="page-header-nav-list">
+			<li class="page-header-nav-item"
+                ng-class="{ active: activeSubSection === item.activeHook }" 
+                ng-repeat="item in menuItems">
+				<a href="#"
+                   ng-click="activeSubSection === item.activeHook; navigate($event, item);">
+                   {{item.label}}
+				</a>
+			</li>
+		</ul>
+
+	</nav>
+
+</header>

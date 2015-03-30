@@ -1,0 +1,27 @@
+<ul class="bulk-list">
+
+    <!-- Retreiving List Data -->
+    <li class="bulk-list-item bulk-list-status" 
+        ng-if="paginator.searching">
+        <div class="bulk-list-status-msg">
+            <div bz-spinner small></div>
+            {{ paginator.searchMsg }}
+        </div>
+    </li>
+
+    <!-- Empty List -->
+    <li class="bulk-list-item bulk-list-status" 
+        ng-if="!paginator.searching && paginator.empty">
+        <div class="bulk-list-empty">
+            {{t('pagination.empty').format(paginator.label)}}
+        </div>
+    </li>
+
+    <!-- Populated List -->
+    <li class="bulk-list-item {{itemClass}} " 
+        ng-repeat="item in paginator.items"
+        ng-show="!paginator.searching"
+        ng-transclude>
+        <!-- The list item markup goes here -->
+    </li>
+</ul>

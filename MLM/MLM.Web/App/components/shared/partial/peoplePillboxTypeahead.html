@@ -1,0 +1,50 @@
+﻿<div class="people-pillbox-typeahead">
+
+    <span   class="fake-placeholder" 
+            ng-if="placeholder && !isFocused && source.length<1">
+            {{placeholder}}
+    </span>
+
+    <span class="tag deletable-tag" ng-repeat="(idx, person) in source">
+        <short-role-formatter person="person"></short-role-formatter>
+        <span class="deletable-tag-btn" 
+        ng-disabled="submitting" 
+        ng-click="remove(idx)"></span>
+    </span>
+
+    <div ng-hide="single && source.length === 1" 
+        class="bz-typeahead-container pillbox-typeahead-container">
+        <input id="typeaheadInput" type="text" 
+            ng-disabled="submitting"
+            ng-model="new_value" 
+            ng-keydown="onKeydown($event)"
+            bz-typeahead
+            bz-typeahead-attribute="name.first+' '+name.last"
+            bz-typeahead-matches="people"
+            bz-typeahead-update-matches="getPeople(typeaheadInput)"
+            bz-typeahead-template-url="itemTpl.html"
+            bz-typeahead-on-select="add(match)"
+            bz-typeahead-is-focused="isFocused"
+            bz-typeahead-show-all-matches-on-focus="showAllMatchesOnFocus"
+            bz-typeahead-no-matches-text="noMatchesText"
+            bz-typeahead-finding-matches-text="findingMatchesText"
+            bz-typeahead-strict
+            bz-typeahead-reset-on-select/>
+    </div>
+
+    <script type="text/ng-template" id="itemTpl.html">
+        <a class="person-card person-card--typeahead" 
+           tabindex="-1" href="#">
+            <div class="person-card-avatar">
+                <avatar small roles="match.userRoles" src="match.images">
+                </avatar>
+            </div>
+            <div class="person-card-details">
+                <short-role-formatter person="match"></short-role-formatter>
+            </div>
+        </a>
+    </script>
+
+</div>
+
+

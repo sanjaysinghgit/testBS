@@ -1,0 +1,31 @@
+ <footer 
+    class="pagination" 
+    ng-show="paginator.totalPages > 1"
+>
+    <section class="pagination-controls">
+        <button 
+            class="btn btn-small prev-page" 
+            ng-disabled="paginator.atStart || paginator.searching" 
+            ng-click="paginator.prevPage();">
+            {{t('common.prev')}}
+        </button>
+        <input 
+            class="curr-page" 
+            type="text" 
+            ng-model="paginator.currentPage"
+            ng-blur="paginator.goToPage($event.target.value)"
+            ng-keypress="($event.keyCode == 13) ? 
+                        paginator.goToPage($event.target.value) : false"
+            ng-disabled="paginator.searching"/>
+            {{t('common.of')}} 
+            <span class="total-pages">
+                {{paginator.totalPages || "..."}} {{t('common.pages')}}
+            </span>
+        <button 
+            class="btn btn-small next-page" 
+            data-ng-disabled="paginator.atEnd || paginator.searching" 
+            data-ng-click="paginator.nextPage();">
+            {{t('common.next')}}
+        </button>
+    </section>
+</footer>

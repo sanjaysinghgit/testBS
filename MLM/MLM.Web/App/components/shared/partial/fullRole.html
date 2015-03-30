@@ -1,0 +1,22 @@
+﻿<div ng-repeat="role in person.userRoles">
+    <div ng-show="role.role.requiredContextType == 'unit'">
+        <span ng-show="canReadAllMemberInfo">{{role.role.displayName}}</span>
+        <span ng-show="!canReadAllMemberInfo" >{{t('canonical_roles.'+role.role.type)}}</span>
+        <span ng-show="canReadAllMemberInfo">{{t('common.of')}}&nbsp;<strong>{{role.context.number}}</strong></span>
+        <span ng-show="buildings.length !== 1">({{role.context.building.displayName}})</span>
+    </div>
+
+    <div ng-show="role.role.requiredContextType != 'unit'">
+        <span permission="can_read_all_member_info">
+           <span ng-show="role.displayName">{{role.displayName}}</span>      <!-- optional title -->
+           <span ng-hide="role.displayName">{{role.role.displayName}}</span> <!-- role type      -->
+           <span> - {{t('canonical_roles.'+role.role.type)}} </span>         <!-- canonical role -->
+        </span>
+        <span permission="!can_read_all_member_info" > 
+            <span>{{t('canonical_roles.'+role.role.type)}}</span>
+            <span ng-if="role.displayName !== undefined"> - {{role.displayName}}</span>
+        </span>
+    </div>
+
+</div>
+

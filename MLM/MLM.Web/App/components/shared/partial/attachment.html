@@ -1,0 +1,41 @@
+﻿<div>
+    <div class="loop-msg-attachment" 
+         ng-show=" item.attachments != undefined || item.attachments.length > 0
+                && item.attachmentMode == ''">
+        <a href="#" 
+           class="file-list-item-content" 
+           ng-click="showAttachment(item)">
+            <file-icon  url="{{item.attachments[0].url}}" 
+                        mime-type="{{item.attachments[0].mimeType}}">
+            </file-icon>
+            <h6 class="file-list-item-name">
+                {{item.attachments[0].displayName}}
+            </h6>
+        </a>
+    </div>
+    <div class="loop-msg-attachment" 
+         ng-show="  item.attachments != undefined 
+                &&  item.attachmentMode == 'doc'">
+        <iframe ng-show="item.attachments[0].docSrc != ''" 
+                ng-src="{{item.attachments[0].docSrc}}"></iframe>
+    </div>
+    <div class="loop-msg-attachment" 
+         ng-show=" item.attachments != undefined 
+                && item.attachmentMode == 'image'">
+        <img ng-src="{{item.attachmentMode == 'image' 
+                    && item.attachments[0].url || ''}}" 
+             class="big"/>
+    </div>
+    <div class="loop-msg-attachment-info" 
+         ng-show=" item.attachments != undefined 
+                && item.attachmentMode != ''">
+        <span class="url">
+            {{item.attachments[0].displayName}}
+        </span>
+        <a  href="#" 
+            class="hideLink" 
+            ng-click="hideAttachment(item)">
+            {{t('loop.hideAttachment')}}
+        </a>
+    </div>
+</div>

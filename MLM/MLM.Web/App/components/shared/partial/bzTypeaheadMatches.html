@@ -1,0 +1,23 @@
+<ul class="bz-typeahead-matches">
+	<li class="bz-typeahead-match" 
+		ng-if="!loading && ( matches.length < 1 )">
+        <span class="bz-typeahead-match-status bz-typeahead-match-status--empty">
+			{{noMatchesTextToDisplay}}
+		</span>
+	</li>
+	<li class="bz-typeahead-match" 
+		ng-if="loading">
+		<span class="bz-typeahead-match-status bz-typeahead-match-status--loading">
+			<span bz-spinner small></span>
+			{{findingMatchesTextToDisplay}}
+		</span>
+	</li>
+	<li class="bz-typeahead-match" 
+		ng-show="!loading && ( matches.length > 0 )"
+		ng-class="{ 'bz-typeahead-match--active': isActive($index) }"
+		ng-repeat="match in matches | limitTo: maxResults" 
+		ng-mouseenter="setActive($index)"
+		ng-mousedown="$event.preventDefault(); selectMatch()">
+		<bz-typeahead-match></bz-typeahead-match>
+	</li>
+</ul>
