@@ -316,11 +316,18 @@ using System.Linq;
               new Setting
               {
                   Company = "MLM",
+                  TDSWithPAN = 10,
+                  TDSWithOutPAN = 20,
+                  VoucherProcessingCharge = 0,
+                  VoucherProcessingChargeCapping = 0,
                   SaveIncomeDaysDuration = 15,
                   PairIncomeAmout = 0,
                   PVAmount =   1,
-                  RepurchasingVoucher = VoucherMode.ByMonthly,
-                  BinaryVoucher = VoucherMode.Weekly,
+                  WeeklyBinaryCapping = 10000,
+                  MonthlyBinaryCapping = 10000,
+                  WeeklyRepurchaseCapping = 10000,
+                  MonthlyRepurchaseCapping = 10000,
+                  VoucherStatus = VoucherMode.ByMonthly,
                   CreatedDate = DateTime.UtcNow,
                   UpdateDate = DateTime.UtcNow,
               });

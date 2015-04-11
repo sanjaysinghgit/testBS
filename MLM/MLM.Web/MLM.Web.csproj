@@ -283,7 +283,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\aboutController.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\Account\ClaimsIdentityFactoryController.cs" />
     <Compile Include="Controllers\Account\RolesAdminController.cs" />
@@ -376,6 +375,10 @@
     <Compile Include="Migrations\201503280928184_UpdatedAgentModel.cs" />
     <Compile Include="Migrations\201503280928184_UpdatedAgentModel.Designer.cs">
       <DependentUpon>201503280928184_UpdatedAgentModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504110932533_Setting changes.cs" />
+    <Compile Include="Migrations\201504110932533_Setting changes.Designer.cs">
+      <DependentUpon>201504110932533_Setting changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1803,6 +1806,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503280928184_UpdatedAgentModel.resx">
       <DependentUpon>201503280928184_UpdatedAgentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504110932533_Setting changes.resx">
+      <DependentUpon>201504110932533_Setting changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

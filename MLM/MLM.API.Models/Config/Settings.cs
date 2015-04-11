@@ -9,7 +9,20 @@ namespace MLM.Models.Config
 {
     public class Setting : MLMBaseEntity
     {
+        [DefaultValue("MLM")]
         public string Company { get; set; }
+
+        [DefaultValue("10")]
+        public decimal TDSWithPAN { get; set; }
+
+        [DefaultValue("20")]
+        public decimal TDSWithOutPAN { get; set; }
+
+        [DefaultValue("0")]
+        public decimal VoucherProcessingCharge { get; set; }
+
+        [DefaultValue("0")]
+        public decimal VoucherProcessingChargeCapping { get; set; }
 
         [DefaultValue("15")]
         public int SaveIncomeDaysDuration { get; set; }
@@ -24,6 +37,21 @@ namespace MLM.Models.Config
         [DefaultValue("1")]
         public int PVAmount { get; set; }
 
+        [DefaultValue("10000")]
+        public int WeeklyBinaryCapping { get; set; }
+
+        [DefaultValue("50000")]
+        public int MonthlyBinaryCapping { get; set; }
+
+        [DefaultValue("10000")]
+        public int WeeklyRepurchaseCapping { get; set; }
+
+        [DefaultValue("50000")]
+        public int MonthlyRepurchaseCapping { get; set; }
+
+        [DefaultValue(VoucherMode.Weekly)]
+        public VoucherMode VoucherStatus { get; set; }
+
         //ClubIncome c1= new ClubIncome { PairCount=50, DaysDuration=180 };
         //[DefaultValue(c1)]
         //public ClubIncome ClubOne { get; set; }
@@ -33,12 +61,6 @@ namespace MLM.Models.Config
 
         //[DefaultValue(new ClubIncome { PairCount = 150, DaysDuration = 180 })]
         //public ClubIncome ClubThree { get; set; }
-
-        [DefaultValue(VoucherMode.Monthly)]
-        public VoucherMode RepurchasingVoucher { get; set; }
-
-        [DefaultValue(VoucherMode.Weekly)]
-        public VoucherMode BinaryVoucher { get; set; }
 
     }
     public class ClubIncome

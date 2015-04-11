@@ -107,6 +107,10 @@ namespace MLM.DB
         public DbSet<ProductKit> ProductKits { get; set; }
         #endregion
 
+        #region "Config"
+        public DbSet<Setting> Settings { get; set; }
+        #endregion
+
         # region "Agents"
         public DbSet<Agent> Agents { get; set; }
         public DbSet<EPin> EPins { get; set; }
@@ -123,9 +127,6 @@ namespace MLM.DB
 
         #endregion
 
-        #region
-        public DbSet<Setting> Settings { get; set; }
-        #endregion
         // public DbSet<Student> Students { get; set; }
         
         
