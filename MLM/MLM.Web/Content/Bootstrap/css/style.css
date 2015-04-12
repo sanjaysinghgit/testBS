@@ -45,8 +45,9 @@ body {
 	font-size: 13px;
     line-height: 21px;
 	font-weight: 300;
-	color: #888;
-	background: url(../images/patterns/1.png) fixed repeat;
+	color:#888;
+    
+	background: url(../images/patterns/15.png) fixed repeat;
 }
 strong, b {
 	font-weight: 600;
@@ -289,14 +290,16 @@ input[type="submit"] {
 }
 
 #container {
-    background-color: #fff;
+    background-color:#fff;
+    /*background-image:url(../images/patterns/5.jpg);*/*/
+    
 }
 
 .boxed-page {
   position: relative;
   width: 1220px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color:#fff;
   -webkit-box-shadow:0 0 10px rgba(0,0,0,0.3);
   -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
   -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -401,11 +404,12 @@ header {
 }
 
 .top-bar {
-	background-color: #fff;
+	
 	border-bottom: 1px solid #f2f2f2;
 }
 
 .top-bar.color-bar {
+    
 	border-bottom: 0;
 }
 
@@ -465,14 +469,14 @@ header {
 .top-bar .contact-details li a:before {
 	position: relative;
 	content: "|";
-	font-size: 13px;
+	font-size: 20px;
 	margin: 0 3px;
 	top: -1px;
 	color: #ddd;
 }
 
 .top-bar .contact-details li a:before {
-	color: #aaa;
+	color: red;
 }
 
 .top-bar .contact-details li:first-child a:before {

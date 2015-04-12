@@ -81,8 +81,20 @@ namespace MLM.Web.Controllers
             return View("Bplan");
         }
 
+        public ActionResult ChairmanMsges()
+        {
+            return View("ChairmanMsg");
+        }
 
+        public ActionResult Contectus()
+        {
+            return View("Contact");
+        }
 
+        public ActionResult Downloads()
+        {
+            return View("Download");
+        }
 
     }
 }

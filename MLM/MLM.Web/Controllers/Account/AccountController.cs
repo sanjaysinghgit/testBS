@@ -131,10 +131,19 @@ namespace MLM.Controllers
                         if (model.PhoneNumber != string.Empty && Request.Url.AbsoluteUri.ToLower().Contains("brightfuturemart"))
                         {
                             string str = null;
-                            string msg = "Registration on Bright Future Mart is successful. Your registration code is " + LatestAgentCode + " and password is " + password + " .";
+                            string msg = "Welcome " + model.Name + " Registration on Bright Future Mart is successful. Your registration code is " + LatestAgentCode + " and password is " + password + " .";
                             Utilities.SendSMS SMSService = new Utilities.SendSMS();
-                            str = SMSService.SendMessage(model.PhoneNumber, msg,"N");
-		                }
+                            str = SMSService.SendMessage(model.PhoneNumber, msg, "N");
+                        }
+                        //if (model.PhoneNumber != string.Empty) && Request.Url.AbsoluteUri.ToLower().Contains("recentmart"))
+                        //{
+                        //    string str = null;
+                        //    string msg = "Welcome " + model.Name + " Registration on Recent Mart is successful. Your registration code is " + LatestAgentCode + " and password is " + password + " .";
+                        //    Utilities.SendSMS SMSService = new Utilities.SendSMS();
+                        //    str = SMSService.SendMessage(model.PhoneNumber, msg, "N");
+                        //}
+
+                       
                         await SignInAsync(user, isPersistent: false);
                         return RedirectToAction("Index", "Home");
                     }

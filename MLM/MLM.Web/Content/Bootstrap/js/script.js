@@ -651,21 +651,21 @@ function readCookie(name) {
 }
 
 window.onload = function (e) {
-    setActiveStyleSheet('beige');
+    setActiveStyleSheet('red');
     $(".top-bar").removeClass("dark-bar");
     $(".top-bar").addClass("color-bar");
     $(window).resize();
-    $("#container").addClass("boxed-page");
+    //$("#container").addClass("boxed-page");
 }
 
 
 $(document).ready(function () {
 
-    setActiveStyleSheet('beige');
+    setActiveStyleSheet('red');
     $(".top-bar").removeClass("dark-bar");
     $(".top-bar").addClass("color-bar");
     $(window).resize();
-    $("#container").addClass("boxed-page");
+    //$("#container").addClass("boxed-page");
     
 
 });

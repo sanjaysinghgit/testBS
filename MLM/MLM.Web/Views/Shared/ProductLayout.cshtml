@@ -176,7 +176,7 @@
                         </div>
                         <!-- End Search -->
                         <!-- Start Navigation List -->
-                        <ul class="nav navbar-nav navbar-right">
+                        @*<ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a class="active" href="/Home/Index">Home</a>
                                 <!--<ul class="dropdown">
@@ -257,7 +257,8 @@
                                 
                           </li>
                             
-                        </ul>
+                        </ul>*@
+                         @Html.Partial("_PublicNavigationPartial")
                         <!-- End Navigation List -->
                     </div>
                 </div>
@@ -274,174 +275,7 @@
 
      <!-- Start Footer Section -->
        
-           <footer>
-          <div class="container">
-                <div class="row footer-widgets">
-                    
-                    <!-- Start Subscribe & Social Links Widget -->
-                    <div class="col-md-3">
-                        <div class="footer-widget mail-subscribe-widget">
-                            <h4>Get in touch<span class="head-line"></span></h4>
-                            <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-                            <form class="subscribe">
-                                <input type="text" placeholder="info@recentmart.in">
-                                <input type="submit" class="main-button" value="Send">
-                            </form>
-                        </div>
-                        <div class="footer-widget social-widget">
-                            <h4>Follow Us<span class="head-line"></span></h4>
-                            <ul class="social-icons">
-                                <li>
-                                    <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a class="google" href="#"><i class="fa fa-google-plus"></i></a>
-                                </li>
-                                <li>
-                                    <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li>
-                                    <a class="linkdin" href="#"><i class="fa fa-linkedin"></i></a>
-                                </li>
-                                <li>
-                                    <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
-                                </li>
-                                <li>
-                                    <a class="instgram" href="#"><i class="fa fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a class="vimeo" href="#"><i class="fa fa-vimeo-square"></i></a>
-                                </li>
-                                <li>
-                                    <a class="skype" href="#"><i class="fa fa-skype"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- .col-md-3 -->
-                    <!-- End Subscribe & Social Links Widget -->
-                    
-                    
-                    <!-- Start Twitter Widget -->
-                    <div class="col-md-3">
-                        <div class="footer-widget twitter-widget">
-                            <h4>Twitter Feed<span class="head-line"></span></h4>
-                            <ul>
-                                @*<li>
-                                    <p><a href="#">@ithemeslab </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                                    <span>28 February 2014</span>
-                                </li>
-                                <li>
-                                    <p><a href="#">@ithemeslab </a> Lorem ipsum dolor et, consectetur adipiscing eli.An Fusce eleifend aliquet nis application.</p>
-                                    <span>26 February 2014</span>
-                                </li>
-                                <li>
-                                    <p><a href="#">@ithemeslab </a> Lorem ipsum dolor et, consectetur adipiscing eli.</p>
-                                    <span>28 February 2014</span>
-                                </li>*@
-                            </ul>
-                        </div>
-                    </div><!-- .col-md-3 -->
-                    <!-- End Twitter Widget -->
-
-
-                    <!-- Start Flickr Widget -->
-                    <div class="col-md-3">
-                        <div class="footer-widget flickr-widget">
-                            <h4>Flicker Feed<span class="head-line"></span></h4>
-                            <ul class="flickr-list">
-                                <li>
-                                    <a href="~/Content/Bootstrap/images/flickr-01.jpg" class="lightbox">
-                                        <img alt="" src="~/Content/Bootstrap/images/flickr-01.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/Content/Bootstrap/images/flickr-02.jpg" class="lightbox">
-                                        <img alt="" src="~/Content/Bootstrap/images/flickr-02.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/Content/Bootstrap/images/flickr-03.jpg" class="lightbox">
-                                        <img alt="" src="~/Content/Bootstrap/images/flickr-03.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/Content/Bootstrap/images/flickr-04.jpg" class="lightbox">
-                                        <img alt="" src="~/Content/Bootstrap/images/flickr-04.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/Content/Bootstrap/images/flickr-05.jpg" class="lightbox">
-                                        <img alt="" src="~/Content/Bootstrap/images/flickr-05.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/Content/Bootstrap/images/flickr-06.jpg" class="lightbox">
-                                        <img alt="" src="~/Content/Bootstrap/images/flickr-06.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/Content/Bootstrap/images/flickr-07.jpg" class="lightbox">
-                                        <img alt="" src="~/Content/Bootstrap/images/flickr-07.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/Content/Bootstrap/images/flickr-08.jpg" class="lightbox">
-                                        <img alt="" src="~/Content/Bootstrap/images/flickr-08.jpg">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="~/Content/Bootstrap/images/flickr-09.jpg" class="lightbox">
-                                        <img alt="" src="~/Content/Bootstrap/images/flickr-09.jpg">
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- .col-md-3 -->
-                    <!-- End Flickr Widget -->
-
-                    
-                    <!-- Start Contact Widget -->
-                    <div class="col-md-3">
-                        <div class="footer-widget contact-widget">
-                            <h4><img src="~/Content/Bootstrap/images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
-                            <p>Congratulations for having taken a right decision in your life. You are joining the Company which is going to create HISTORY IN THE NETWORK MARKETING BUSINESS. We have brought about a LOW-COST CONCEPT that has the power to radically change your LIFE STYLE. Your search for FAME, MONEY, HAPPINESS and SUCCESS has ended the moment you took the decision to be part of our ever growing <strong>Recent Mart</strong> family.</p>
-                            <ul>
-                                <li><span>Phone Number:</span>91 9719322201 </li>
-                                <li><span>Email:</span>info@recentmart.in</li>
-                                <li><span>Website:</span> www.recentmart.in</li>
-                            </ul>
-                        </div>
-                    </div><!-- .col-md-3 -->
-                    <!-- End Contact Widget -->
-
-                
-                </div><!-- .row -->
-                
-                <!-- Start Copyright -->
-            <div class="copyright-section">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>Recent Mart All Rights Reserved</p>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="footer-nav">
-                                <li><a href="#">Terms & Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Sitemap</a></li>
-                            </ul>
-                        </div>                      
-                    </div>
-            </div>
-                <!-- End Copyright -->
-                
-          </div>
-        </footer>
+        @Html.Partial("_FooterPartial")
     
     
         <!-- End Footer Section -->
