@@ -7,7 +7,14 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Hello " + (string)ViewBag.Name + "!" + " (Code - " + (string)ViewBag.Code + ")", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @if (ViewBag.Role == "admin")
+                {
+                    @Html.ActionLink("Hello " + (string)ViewBag.Name + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+                }
+                else if (ViewBag.Role == "agent")
+                {
+                    @Html.ActionLink("Hello " + (string)ViewBag.Name + "!" + " (Code - " + (string)ViewBag.Code + ")", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+                }
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
         </ul>

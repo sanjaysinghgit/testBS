@@ -18,13 +18,21 @@ function (
 
         var defaultDependencies = {
             currentUser: Resolve.getCurrentUser,
+            currentUser: Resolve.getCurrentUserRoles,
+        };
+
+        var agentDependencies = {
+            currentUser: Resolve.getCurrentUser,
+            currentUser: Resolve.getCurrentUserRoles,
             agentTree: Resolve.getAgentTree,
 
         };
 
+
+
         $locationProvider.html5Mode({
             enabled: true,
-            requireBase: false
+            requireBase: true
         });
         
         $sceDelegateProvider.resourceUrlWhitelist([
@@ -56,37 +64,37 @@ function (
     $routeProvider
             // Home page
             .when('/', {
-                templateUrl: Url.resolveLocal('/components/shared/partial/main.html'),
+                templateUrl: Url.resolveLocal('components/shared/partial/main.html'),
                 controller: 'mainCtrl',
                 resolve: defaultDependencies,
                 cache: true
             })
             // Business Plan
-            .when('/businessPlan', {
-                templateUrl: Url.resolveLocal('/components/shared/partial/bplan.html'),
+            .when('/auth/businessPlan', {
+                templateUrl: Url.resolveLocal('components/shared/partial/bplan.html'),
                 controller: 'bPlanCtrl'
             })
             // Tree Report
-            .when('/weeklySection/treeReport', {
-                templateUrl: Url.resolveLocal('/components/weeklySection/partial/treeReport.html'),
+            .when('/auth/weeklySection/treeReport', {
+                templateUrl: Url.resolveLocal('components/weeklySection/partial/treeReport.html'),
                 controller: 'treeReportCtrl',
-                resolve: defaultDependencies,
+                resolve: agentDependencies,
                 //navSection: "weeklySection",
                 //permissionContext: 'home',
                 //cache: true
             })
-            .when('/agent/agentsList', {
-                templateUrl: Url.resolveLocal('/components/agent/partial/agentList.html'),
+            .when('/auth/agent/agentsList', {
+                templateUrl: Url.resolveLocal('components/agent/partial/agentList.html'),
                 controller: 'agentCtrl',
-                //resolve: defaultDependencies,
+                //resolve: agentDependencies,
                 //navSection: "weeklySection",
                 //permissionContext: 'home',
                 //cache: true
             })
-            .when('/agent/registration', {
-                templateUrl: Url.resolveLocal('/components/agent/partial/agentList.html'),
+            .when('/auth/agent/registration', {
+                templateUrl: Url.resolveLocal('components/agent/partial/agentList.html'),
                 controller: 'agentCtrl',
-                //resolve: defaultDependencies,
+                //resolve: agentDependencies,
                 //navSection: "weeklySection",
                 //permissionContext: 'home',
                 //cache: true
@@ -97,22 +105,22 @@ function (
             //    resolve: defaultDependencies,
             //    cache: false
             //})
-            .when('/agent/Tree/Binary', {
-                templateUrl: Url.resolveLocal('/components/agent/partial/agentBTree.html'),
+            .when('/auth/agent/Tree/Binary', {
+                templateUrl: Url.resolveLocal('components/agent/partial/agentBTree.html'),
                 controller: 'agentBTreeCtrl',
-                resolve: defaultDependencies,
+                resolve: agentDependencies,
                 cache: true
             })
-            .when('/agent/Tree/Generation', {
-                templateUrl: Url.resolveLocal('/components/agent/partial/agentGTree.html'),
+            .when('/auth/agent/Tree/Generation', {
+                templateUrl: Url.resolveLocal('components/agent/partial/agentGTree.html'),
                 controller: 'agentGTreeCtrl',
-                resolve: defaultDependencies,
+                resolve: agentDependencies,
                 cache: true
             })
-        .when('/agent/Details', {
-            templateUrl: Url.resolveLocal('/components/agent/partial/agentDetails.html'),
+        .when('/auth/agent/Details', {
+            templateUrl: Url.resolveLocal('components/agent/partial/agentDetails.html'),
             controller: 'agentDetailsCtrl',
-            resolve: defaultDependencies,
+            resolve: agentDependencies,
             cache: true
         })
 
@@ -120,7 +128,7 @@ function (
         // Handle incoming email links //
         /////////////////////////////////
 
-        .when('/fromEmail', {
+        .when('/auth/fromEmail', {
             //provide an empty template. all we are doing here is redirecting
             template: '<span></span>', 
             controller: FromEmailCtrl

@@ -21,6 +21,7 @@
              agentRepository,
              bLog
              ) {
-        console.log("inMain");
+        //console.log("inMain");
         $scope.CurrentUser = $route.current.locals.currentUser;
+        console.log($route.current.locals.currentUser);
     }]);

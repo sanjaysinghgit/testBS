@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Indexs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div><h1>Welcome to Recent Mart</h1>
+
+    
+    @WelcomeMessage()
+
+
+    @helper WelcomeMessage()
+{
+    <H1>Welcome, @User.Identity.GetUserName()</H1>
+    
+}
+</div>

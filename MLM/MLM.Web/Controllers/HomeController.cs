@@ -11,6 +11,7 @@ using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Security.Claims;
 
 namespace MLM.Web.Controllers
 {
@@ -32,30 +33,9 @@ namespace MLM.Web.Controllers
             try
             {
 
-                //Redirect(string.Format("https://{0}{1}", HttpContext.Request.Url.Host,
-                //                               HttpContext.Request.Url.PathAndQuery));
                 if (User.Identity.IsAuthenticated)
                 {
-                    var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new MLMDbContext("MLMCon")));
-
-                    // Get the current logged in User and look up the user in ASP.NET Identity
-                    var currentUser = manager.FindById(User.Identity.GetUserId());
-                    if (currentUser != null)
-                    {
-                        ViewBag.Code = currentUser.AgentInfo.Code;
-                        ViewBag.Name = currentUser.Name;
-                        return View("IndexAuth");
-                    }
-                    else
-                    {
-                        AuthenticationManager.SignOut();
-                        return View();
-                        //ModelState.AddModelError("", "Invalid username or password.");
-                    }
-                    // Recover the profile information about the logged in user
-
-
-
+                    return RedirectToRoute("AngularCatchAllRoute");
                 }
                 else
                 {
@@ -67,7 +47,6 @@ namespace MLM.Web.Controllers
 
                 return View("Error");
             }
-
 
         }
 

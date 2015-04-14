@@ -60,6 +60,7 @@ using System.Linq;
                 string password = "123456";
                 var user = new ApplicationUser();
                 user.UserName = "admin";
+                user.Name = "Administrator";
                 user.DOB = DateTime.UtcNow;
                 var adminresult = UserManager.Create(user, password);
                 //Add User Admin to Role Admin

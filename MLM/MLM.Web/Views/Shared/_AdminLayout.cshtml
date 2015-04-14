@@ -81,7 +81,6 @@
 
     <base href="@System.Configuration.ConfigurationManager.AppSettings["BaseUrlPath"].ToString()" />
 
-
 </head>
 
 <body>
@@ -138,9 +137,6 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="/Home/Index" style="padding-top: 27px; padding-bottom: 100px;">
-                            <img alt="" src="~/Content/Bootstrap/images/m-2.png" @*style="height:50px*@">
-                        </a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <!-- Stat Search -->
@@ -154,7 +150,7 @@
                         </div>
                         <!-- End Search -->
                         <!-- Start Navigation List -->
-                        @Html.Partial("_PrivateNavigationPartial")
+                        @Html.Partial("_AdminNavigationPartial")
                         <!-- End Navigation List -->
                     </div>
                 </div>

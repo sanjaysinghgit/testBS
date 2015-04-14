@@ -7,6 +7,7 @@
     //must have for every route
     this.agentTree = {};
     this.currentUser = {};
+    this.currentUserRoles = {};
 
     //----------------------------------------------------------------------
     // Member functions
@@ -87,6 +88,43 @@ Resolve.getCurrentUser = ['$q',
                                   }, function (error) {
                                       deferred.reject(error);
                                       console.log("error in agent CTRL: " + error)
+                                  });
+
+                              }
+                              // Set the promise to the member variable to be accessed by other
+                              // functions that have it as a dependency
+                              this.currentUser = deferred.promise;
+                              return deferred.promise;
+                          }];
+
+
+Resolve.getCurrentUserRoles = ['$q',
+                          '$rootScope',
+                          'profileCache',
+                          'agentRepository',
+                          function ($q,
+                                    $rootScope,
+                                    profileCache,
+                                    agentRepository) {
+
+                              var deferred = $q.defer();
+                              //console.log("in resolve getCurrentUserRoles");
+                              var User =
+                                     profileCache.get(profileCache.kKeyCurRoles)
+
+                              if (User) {
+                                  deferred.resolve(User);
+                              }
+                              else {
+
+                                  agentRepository.getCurrentUserRoles().then(function (agentData) {
+                                      profileCache.put(profileCache.kKeyCurRoles, agentData);
+                                      if (agentData) {
+                                          deferred.resolve(agentData);
+                                      }
+                                  }, function (error) {
+                                      deferred.reject(error);
+                                      console.log("error in getCurrentUserRoles: " + error)
                                   });
 
                               }

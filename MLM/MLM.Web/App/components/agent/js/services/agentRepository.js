@@ -15,6 +15,9 @@ factory('agentRepository', ['$resource', '$q', 'bLog', 'agentTreeCache', 'profil
     var getCurrentUserResource = $resource(Url.resolve('ApplicationUser/GetCurrentUser'), null,
         { get: { method: 'GET', isArray: false } }
     );
+    var getCurrentUserRolesResource = $resource(Url.resolve('ApplicationUser/GetCurrentUserRoles'), null,
+        { get: { method: 'GET', isArray: true } }
+    );
 
     return {
         
@@ -75,6 +78,23 @@ factory('agentRepository', ['$resource', '$q', 'bLog', 'agentTreeCache', 'profil
                 });
 
             return deferred.promise;
+        },
+        getCurrentUserRoles: function () {
+
+            var requestParams = {};
+            var deferred = $q.defer();
+
+            getCurrentUserRolesResource.get(requestParams, function (res) {
+                deferred.resolve(res);
+            },
+                function (err) {
+                    deferred.reject(err);
+                    //bLog.serverError("Server Error", err);
+                    console.log("Error: " + err);
+                });
+
+            return deferred.promise;
+
         },
         getCurrentUser: function () {
 

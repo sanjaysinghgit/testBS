@@ -1,18 +1,22 @@
-﻿var Url = {
+﻿var baseSiteUrlPath = $("base").first().attr("href");
+
+var baseTemplateUrl = baseSiteUrlPath + "app/";
+
+var Url = {
     localizationPath : function (language) {
-        return "/app/localization/" + language + ".json";
+        return baseTemplateUrl + "localization/" + language + ".json";
     },
     resolve: function (path) {
         if(path.indexOf("/")!=0)
             path = "/"+path;
-        return MLM_CONFIG.SERVICE_BASE() + '/api' + path;
+        return baseSiteUrlPath + 'api' + path;
     },
     resolvePublic: function (path) {
         if (path.indexOf("/") != 0)
             path = "/" + path;
-        return MLM_CONFIG.SERVICE_BASE() + '/api/public' + path;
+        return baseSiteUrlPath + 'api/public' + path;
     },
     resolveLocal: function (path) {
-        return '/app' + path;
+        return baseTemplateUrl + path;
     }
 }

@@ -15,7 +15,7 @@
     <AssemblyName>MLM.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -304,6 +304,7 @@
     <Compile Include="Controllers\Api\ProductKitController.cs" />
     <Compile Include="Controllers\Api\SPRepository.cs" />
     <Compile Include="Controllers\Api\SqlParameter.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="DB\DatabaseFactory.cs" />
@@ -1669,7 +1670,7 @@
     <Content Include="Views\Products\SingleProduct.cshtml" />
     <Content Include="Views\Products\_ViewStart.cshtml" />
     <Content Include="Views\Shared\ProductLayout.cshtml" />
-    <Content Include="Views\Shared\_PrivateLayout.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Home\Bplan.cshtml" />
     <Content Include="Views\Home\ChairmanMsg.cshtml" />
     <Content Include="Views\Home\Download.cshtml" />
@@ -1697,10 +1698,13 @@
     <Content Include="Views\UsersAdmin\Index.cshtml" />
     <Content Include="Views\Validation\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\IndexAuth.cshtml" />
+    <Content Include="Views\Auth\IndexAgent.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_PublicNavigationPartial.cshtml" />
     <Content Include="Views\Shared\_PrivateNavigationPartial.cshtml" />
+    <Content Include="Views\Auth\IndexAdmin.cshtml" />
+    <Content Include="Views\Shared\_PrivateLayout.cshtml" />
+    <Content Include="Views\Shared\_AdminNavigationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App\components\auth\partial\" />
@@ -1829,7 +1833,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55960</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55960/</IISUrl>
+          <IISUrl>http://localhost/MLM.Web</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

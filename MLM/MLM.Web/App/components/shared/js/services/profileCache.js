@@ -11,7 +11,8 @@
         // Add static properties
         cache = angular.extend(cache,
             {
-                kKeyCurProfile: 'userProfile'
+                kKeyCurProfile: 'userProfile',
+                kKeyCurRoles: 'userRoles'
             });
 
         return cache;

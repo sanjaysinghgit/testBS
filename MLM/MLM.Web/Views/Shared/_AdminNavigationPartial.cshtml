@@ -1,18 +1,18 @@
 <ul class="nav navbar-nav navbar-left">
     <li>
-        @Html.ActionLink("Home", "Index", "Home", null, new { target = "_self" })
+        <a class="active" href="/Home/Index">Home</a>
     </li>
     <li>
-        <a href="auth/agent/Details">Agent</a>
+        <a href="/#/">Manage</a>
         <ul class="dropdown">
             <li>
-                <a href="auth/agent/Details">My Details</a>
+                <a href="/#/agent/Details">My Details</a>
             </li>
             <li>
-                <a href="auth/agent/Tree/Binary">My Binary Tree</a>
+                <a href="/#/agent/Tree/Binary">Agents Binary Tree</a>
             </li>
             <li>
-                <a href="auth/agent/Tree/Generation">My Generation Tree</a>
+                <a href="/#/agent/Tree/Generation">Agents Generation Tree</a>
             </li>
         </ul>
     </li>
