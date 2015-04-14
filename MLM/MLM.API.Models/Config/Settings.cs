@@ -27,6 +27,12 @@ namespace MLM.Models.Config
         [DefaultValue("15")]
         public int SaveIncomeDaysDuration { get; set; }
 
+        [DefaultValue("100")]
+        public int SaveIncomeAmount { get; set; }
+
+        [DefaultValue(BinaryIncomeType.ByPair)]
+        public BinaryIncomeType BinaryIncomeSetting { get; set; }
+
         /// <summary>
         /// Not for Recent. Other companies follow fix pairincome rule where it will be applicable.
         /// So we can say companies who follow multiple rules for joining kit do not use this.
@@ -73,5 +79,11 @@ namespace MLM.Models.Config
         Weekly = 1,
         ByMonthly = 2,
         Monthly = 3
+    }
+
+    public enum BinaryIncomeType
+    {
+        ByPair = 1,
+        ByPV = 2,
     }
 }

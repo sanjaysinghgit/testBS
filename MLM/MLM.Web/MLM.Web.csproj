@@ -381,6 +381,18 @@
     <Compile Include="Migrations\201504110932533_Setting changes.Designer.cs">
       <DependentUpon>201504110932533_Setting changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504141506535_Payout.cs" />
+    <Compile Include="Migrations\201504141506535_Payout.Designer.cs">
+      <DependentUpon>201504141506535_Payout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504141520348_updatePayout.cs" />
+    <Compile Include="Migrations\201504141520348_updatePayout.Designer.cs">
+      <DependentUpon>201504141520348_updatePayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504141641327_saveincome.cs" />
+    <Compile Include="Migrations\201504141641327_saveincome.Designer.cs">
+      <DependentUpon>201504141641327_saveincome.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -801,6 +813,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="DB\StoredProcedures\usp_AgentBinaryPayout.sql" />
     <Content Include="DB\StoredProcedures\usp_GetAgentApplicableSponsorCode.sql" />
     <Content Include="DB\StoredProcedures\usp_AgentTree.sql" />
     <Content Include="DB\StoredProcedures\usp_AgentSponsorRegistrationConditions.sql" />
@@ -1813,6 +1826,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504110932533_Setting changes.resx">
       <DependentUpon>201504110932533_Setting changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504141506535_Payout.resx">
+      <DependentUpon>201504141506535_Payout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504141520348_updatePayout.resx">
+      <DependentUpon>201504141520348_updatePayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504141641327_saveincome.resx">
+      <DependentUpon>201504141641327_saveincome.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

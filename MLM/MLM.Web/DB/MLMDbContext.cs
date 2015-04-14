@@ -127,6 +127,10 @@ namespace MLM.DB
 
         #endregion
 
+
+        #region voucher
+        public DbSet<Payout> Payouts { get; set; }
+        #endregion
         // public DbSet<Student> Students { get; set; }
         
         

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace MLM.Models
         /// <summary>
         /// Around 10 digit alphanumeric code
         /// </summary>
+        /// 
         public string Code { get; set; }
         public string SponsorCode { get; set; }
         public string IntroducerCode { get; set; }
@@ -32,6 +34,7 @@ namespace MLM.Models
 
         public EPin EPin { get; set; }
 
+        //Agent Joining status
         public AgentStatus Status { get; set; }
 
 
@@ -81,9 +84,9 @@ namespace MLM.Models
     public enum AgentStatus
     {
         Available = 1,
-        Pedning = 2,
-        Associate = 3,
-        Executive = 4,
+        Pedning = 2, //Guest and active
+        Associate = 3, //Not required????
+        Executive = 4, // Agent and active
         Suspend = 5
     }  
 
