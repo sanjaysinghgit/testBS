@@ -63,6 +63,7 @@
     <Compile Include="Product\ProductKit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TempModels\TempAgTree.cs" />
+    <Compile Include="Voucher\PairPriceMaster.cs" />
     <Compile Include="Voucher\Payout.cs" />
   </ItemGroup>
   <ItemGroup>

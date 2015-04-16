@@ -377,21 +377,13 @@
     <Compile Include="Migrations\201503280928184_UpdatedAgentModel.Designer.cs">
       <DependentUpon>201503280928184_UpdatedAgentModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201504110932533_Setting changes.cs" />
-    <Compile Include="Migrations\201504110932533_Setting changes.Designer.cs">
-      <DependentUpon>201504110932533_Setting changes.cs</DependentUpon>
+    <Compile Include="Migrations\201504151452372_InitialCreate.cs" />
+    <Compile Include="Migrations\201504151452372_InitialCreate.Designer.cs">
+      <DependentUpon>201504151452372_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201504141506535_Payout.cs" />
-    <Compile Include="Migrations\201504141506535_Payout.Designer.cs">
-      <DependentUpon>201504141506535_Payout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201504141520348_updatePayout.cs" />
-    <Compile Include="Migrations\201504141520348_updatePayout.Designer.cs">
-      <DependentUpon>201504141520348_updatePayout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201504141641327_saveincome.cs" />
-    <Compile Include="Migrations\201504141641327_saveincome.Designer.cs">
-      <DependentUpon>201504141641327_saveincome.cs</DependentUpon>
+    <Compile Include="Migrations\201504151454293_shobhit.cs" />
+    <Compile Include="Migrations\201504151454293_shobhit.Designer.cs">
+      <DependentUpon>201504151454293_shobhit.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -1824,17 +1816,11 @@
     <EmbeddedResource Include="Migrations\201503280928184_UpdatedAgentModel.resx">
       <DependentUpon>201503280928184_UpdatedAgentModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201504110932533_Setting changes.resx">
-      <DependentUpon>201504110932533_Setting changes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504151452372_InitialCreate.resx">
+      <DependentUpon>201504151452372_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201504141506535_Payout.resx">
-      <DependentUpon>201504141506535_Payout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201504141520348_updatePayout.resx">
-      <DependentUpon>201504141520348_updatePayout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201504141641327_saveincome.resx">
-      <DependentUpon>201504141641327_saveincome.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201504151454293_shobhit.resx">
+      <DependentUpon>201504151454293_shobhit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
