@@ -131,6 +131,7 @@ namespace MLM.DB
         #region voucher
         public DbSet<Payout> Payouts { get; set; }
         public DbSet<PairPriceMaster> PairPriceMasters { get; set; }
+        public DbSet<PairPrizeWinner> PairPrizeWinners { get; set; }
         #endregion
         // public DbSet<Student> Students { get; set; }
         

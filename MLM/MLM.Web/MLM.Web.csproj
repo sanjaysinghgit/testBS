@@ -377,6 +377,18 @@
     <Compile Include="Migrations\201503280928184_UpdatedAgentModel.Designer.cs">
       <DependentUpon>201503280928184_UpdatedAgentModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504161608031_UpdatePairPriceMaster.cs" />
+    <Compile Include="Migrations\201504161608031_UpdatePairPriceMaster.Designer.cs">
+      <DependentUpon>201504161608031_UpdatePairPriceMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504161806448_s.cs" />
+    <Compile Include="Migrations\201504161806448_s.Designer.cs">
+      <DependentUpon>201504161806448_s.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504171137302_migrationissue.cs" />
+    <Compile Include="Migrations\201504171137302_migrationissue.Designer.cs">
+      <DependentUpon>201504171137302_migrationissue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AdminViewModel.cs" />
@@ -797,6 +809,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="DB\StoredProcedures\Function\ufn_AgentTotalLeftRight.sql" />
     <Content Include="DB\StoredProcedures\usp_AgentBinaryPayout.sql" />
     <Content Include="DB\StoredProcedures\usp_GetAgentApplicableSponsorCode.sql" />
     <Content Include="DB\StoredProcedures\usp_AgentTree.sql" />
@@ -1807,6 +1820,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503280928184_UpdatedAgentModel.resx">
       <DependentUpon>201503280928184_UpdatedAgentModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504161608031_UpdatePairPriceMaster.resx">
+      <DependentUpon>201504161608031_UpdatePairPriceMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504161806448_s.resx">
+      <DependentUpon>201504161806448_s.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504171137302_migrationissue.resx">
+      <DependentUpon>201504171137302_migrationissue.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
