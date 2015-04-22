@@ -14,7 +14,7 @@ using System.Linq;
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(MLM.DB.MLMDbContext context)
