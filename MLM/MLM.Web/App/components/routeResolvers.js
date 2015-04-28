@@ -35,7 +35,7 @@ Resolve.getAgentTree = ['$q',
                                       console.log('Missing user data.');
                                       return;
                                   }
-
+                                  
                                   var currentUserCode = values[0].AgentInfo.Code;
 
                                   console.log("Current user code: " + currentUserCode);
@@ -130,7 +130,7 @@ Resolve.getCurrentUserRoles = ['$q',
                               }
                               // Set the promise to the member variable to be accessed by other
                               // functions that have it as a dependency
-                              this.currentUser = deferred.promise;
+                              this.currentUserRoles = deferred.promise;
                               return deferred.promise;
                           }];
 

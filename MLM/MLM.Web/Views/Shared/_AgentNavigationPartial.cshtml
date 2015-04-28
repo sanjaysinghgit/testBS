@@ -3,20 +3,17 @@
         @Html.ActionLink("Home", "Index", "Home", null, new { target = "_self" })
     </li>
     <li>
-        <a href="/#/">Manage</a>
+        <a href="auth/agent/Details">Agent</a>
         <ul class="dropdown">
             <li>
-                <a href="auth/payout/list">Payouts</a>
-            </li>
-            @*<li>
                 <a href="auth/agent/Details">My Details</a>
-            </li>*@
-            @*<li>
-                <a href="auth/agent/Tree/Binary">Agents Binary Tree</a>
             </li>
             <li>
-                <a href="auth/agent/Tree/Generation">Agents Generation Tree</a>
-            </li>*@
+                <a href="auth/agent/Tree/Binary">My Binary Tree</a>
+            </li>
+            <li>
+                <a href="auth/agent/Tree/Generation">My Generation Tree</a>
+            </li>
         </ul>
     </li>
     <li>

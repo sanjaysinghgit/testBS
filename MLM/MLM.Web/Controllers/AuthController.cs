@@ -52,9 +52,15 @@ namespace MLM.Web.Controllers
                             ViewBag.Name = currentUser.Name;
                             return View("IndexAgent");
                         }
+                        else if (roles.Find(r => r.Value == "employee") != null)
+                        {
+                            ViewBag.Role = "employee";
+                            ViewBag.Name = currentUser.Name;
+                            return View("IndexEmployee");
+                        }
                         else
                         {
-                            return View();
+                            return View("Error");
                         }
                     }
                     else
@@ -64,13 +70,10 @@ namespace MLM.Web.Controllers
                         //ModelState.AddModelError("", "Invalid username or password.");
                     }
                     // Recover the profile information about the logged in user
-
-
-
                 }
                 else
                 {
-                    return View();
+                    return View("Error");
                 }
             }
             catch (System.Exception e)

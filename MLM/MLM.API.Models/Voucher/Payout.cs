@@ -13,7 +13,7 @@ namespace MLM.Models
         
         public DateTime VoucherDate { get; set; }
 
-        public string Agentcode { get; set; }
+        public string AgentCode { get; set; }
             
         public string PAN { get; set; }
 

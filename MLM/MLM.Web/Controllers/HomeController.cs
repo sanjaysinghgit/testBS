@@ -65,7 +65,7 @@ namespace MLM.Web.Controllers
             return View("ChairmanMsg");
         }
 
-        public ActionResult Contectus()
+        public ActionResult Contactus()
         {
             return View("Contact");
         }

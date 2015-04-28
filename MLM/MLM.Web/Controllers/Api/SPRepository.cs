@@ -101,6 +101,55 @@ namespace MLM
             return agentDetails;
         }
 
+
         #endregion
+
+        #region "Payout"
+
+        //public List<Payout> AgentsPayouts(DateTime startDate, DateTime endDate)
+        //{
+
+        //    var sqlParameters = new List<SqlParameter>
+        //    {
+        //        new SqlParameter("@VoucherStartDate", startDate),
+        //        new SqlParameter("@VoucherEndDate", endDate),
+        //    };
+
+        //    var payoutList = new List<Payout>();
+
+        //    using (var reader = SQLRepository.ExecuteProcedure("usp_AgentsPayouts", sqlParameters.ToArray()))
+        //    {
+        //        while (reader.Read())
+        //        {
+        //            var payout = new Payout
+        //            {
+        //                VoucherDate = Convert.ToDateTime(reader["VoucherDate"]),
+        //                Agentcode = reader["Agentcode"].ToString(),
+        //                PAN = reader["PAN"].ToString(),
+        //                TotalLeftPair = Convert.ToInt32(reader["TotalLeftPair"]),
+        //                TotalRightPair = Convert.ToInt32(reader["TotalRightPair"]),
+        //                PairsInThisPayout = Convert.ToInt32(reader["PairsInThisPayout"]),
+        //                SaveIncome = Convert.ToDecimal(reader["SaveIncome"]),
+        //                PairIncome = Convert.ToDecimal(reader["PairIncome"]),
+        //                TDS = Convert.ToDecimal(reader["TDS"]),
+        //                ProcessingCharges = Convert.ToDecimal(reader["ProcessingCharges"]),
+        //                NetIncome = Convert.ToDecimal(reader["NetIncome"]),
+        //                DispatchedAmount = Convert.ToDecimal(reader["DispatchedAmount"]),
+        //                CreatedDate = Convert.ToDateTime(reader["CreatedDate"]),
+        //                UpdateDate = Convert.ToDateTime(reader["UpdateDate"]),
+        //                TotalLeftPairPV = Convert.ToInt32(reader["TotalLeftPairPV"]),
+        //                TotalRightPairPV = Convert.ToInt32(reader["TotalRightPairPV"]),
+        //                PairsPVInThisPayout = Convert.ToInt32(reader["PairsPVInThisPayout"])
+        //            };
+        //            payoutList.Add(payout);
+        //        }
+        //    }
+        //    return payoutList;
+        //}
+
+
+        #endregion
+
+
     }
 }

@@ -18,16 +18,15 @@ function (
 
         var defaultDependencies = {
             currentUser: Resolve.getCurrentUser,
-            currentUser: Resolve.getCurrentUserRoles,
+            currentUserRoles: Resolve.getCurrentUserRoles,
         };
 
         var agentDependencies = {
             currentUser: Resolve.getCurrentUser,
-            currentUser: Resolve.getCurrentUserRoles,
+            currentUserRoles: Resolve.getCurrentUserRoles,
             agentTree: Resolve.getAgentTree,
 
         };
-
 
 
         $locationProvider.html5Mode({
@@ -74,15 +73,6 @@ function (
                 templateUrl: Url.resolveLocal('components/shared/partial/bplan.html'),
                 controller: 'bPlanCtrl'
             })
-            // Tree Report
-            .when('/auth/weeklySection/treeReport', {
-                templateUrl: Url.resolveLocal('components/weeklySection/partial/treeReport.html'),
-                controller: 'treeReportCtrl',
-                resolve: agentDependencies,
-                //navSection: "weeklySection",
-                //permissionContext: 'home',
-                //cache: true
-            })
             .when('/auth/agent/agentsList', {
                 templateUrl: Url.resolveLocal('components/agent/partial/agentList.html'),
                 controller: 'agentCtrl',
@@ -91,20 +81,6 @@ function (
                 //permissionContext: 'home',
                 //cache: true
             })
-            .when('/auth/agent/registration', {
-                templateUrl: Url.resolveLocal('components/agent/partial/agentList.html'),
-                controller: 'agentCtrl',
-                //resolve: agentDependencies,
-                //navSection: "weeklySection",
-                //permissionContext: 'home',
-                //cache: true
-            })
-            //.when('/agent/Tree/:typeMode', {
-            //    templateUrl: Url.resolveLocal('/components/agent/partial/agentTree.html'),
-            //    controller: 'agentTreeCtrl',
-            //    resolve: defaultDependencies,
-            //    cache: false
-            //})
             .when('/auth/agent/Tree/Binary', {
                 templateUrl: Url.resolveLocal('components/agent/partial/agentBTree.html'),
                 controller: 'agentBTreeCtrl',
@@ -123,6 +99,14 @@ function (
             resolve: agentDependencies,
             cache: true
         })
+        ///////////////////// Payout routes /////////////////
+        .when('/auth/payout/list', {
+            templateUrl: Url.resolveLocal('components/payout/partial/payoutList.html'),
+            controller: 'payoutCtrl',
+            //resolve: agentDependencies,
+            //cache: true
+        })
+
 
         /////////////////////////////////
         // Handle incoming email links //

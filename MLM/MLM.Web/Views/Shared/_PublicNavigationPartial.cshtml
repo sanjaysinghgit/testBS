@@ -1,49 +1,45 @@
 <ul class="nav navbar-nav navbar-left">
     <li>
-        <a class="active" href="/Home/Index">Home</a>
+        @Html.ActionLink("Home", "Index", "Home", null, new { target = "_self" })
     </li>
 
     <li>
-        <a href="/Home/about">About</a>
+        @Html.ActionLink("About", "About", "Home", null, new { target = "_self" })
         <ul class="dropdown">
             <li>
-                <a href="/Home/about">About Recent Mart</a>
+                @Html.ActionLink("About Recent Mart", "About", "Home", null, new { target = "_self" })
+                </li>
+            <li>
+                @Html.ActionLink("About Group", "About", "Home", null, new { target = "_self" })
             </li>
             <li>
-                <a href="#">About Group</a>
+                @Html.ActionLink("Chairman's Message", "ChairmanMsges", "Home", null, new { target = "_self" })
             </li>
             <li>
-                <a href="/Home/ChairmanMsges">Chairman's Message</a>
+                @Html.ActionLink("Legal", "About", "Home", null, new { target = "_self" })
             </li>
-            <li>
-                <a href="#">Legal</a>
-            </li>
-
         </ul>
-
-
-
     </li>
     <li>
-        <a href="/Home/BusinessPlan">Business Plan</a>
+        @Html.ActionLink("Business Plan", "BusinessPlan", "Home", null, new { target = "_self" })
     </li>
     <li>
-        <a href="/Products/Productpage">Products</a>
+        @Html.ActionLink("Products", "Productpage", "Products", null, new { target = "_self" })
         <ul class="dropdown">
             <li>
-                <a href="/Products/Productpage">FMCG</a>
+                @Html.ActionLink("FMCG", "Productpage", "Products", null, new { target = "_self" })
             </li>
             <li>
-                <a href="/Products/Productpage">Orgenic</a>
+                @Html.ActionLink("Orgenic", "Productpage", "Products", null, new { target = "_self" })
             </li>
             <li>
-                <a href="/Products/Productpage">All</a>
+                @Html.ActionLink("All", "Productpage", "Products", null, new { target = "_self" })
             </li>
 
         </ul>
     </li>
     <li>
-        <a href="/Home/Downloads">Downloads</a>
+        @Html.ActionLink("Downloads", "Downloads", "Home", null, new { target = "_self" })
         <ul class="dropdown">
             @*<li>
                 <a href="/Home/Downloads">Joining Forms</a>
@@ -61,8 +57,7 @@
 
     </li>
     <li>
-        <a href="/Home/Contectus">Contact Us</a>
-
+        @Html.ActionLink("Contact Us", "Contactus", "Home", null, new { target = "_self" })
     </li>
 </ul>
 @Html.Partial("_LoginPartial")

@@ -102,7 +102,7 @@ namespace MLM.Controllers
                     user.AgentInfo = new Agent()
                     {
                         Code = LatestAgentCode,
-                        SponsorCode = model.AgentApplicableSponsorCode,
+                        SponsorCode = agentApplicableSponsorCode,
                         IntroducerCode = model.SponsorCode,
                         LeftAgent = null,
                         RightAgent = null,
@@ -125,8 +125,14 @@ namespace MLM.Controllers
 
                     if (result.Succeeded)
                     {
+                        //Add User Admin to Role Admin
+                        var roleResult = await UserManager.AddToRoleAsync(user.Id, "agent");
+
+
                         //Update sponsor's left or right position, save income status, voucher status
-                        _SPRepository.AgentSponsorRegistrationConditions(LatestAgentCode, model.AgentApplicableSponsorCode, model.SponsorCode, model.Position);
+                        //agentApplicableSponsorCode will act as Sponsor code and
+                        //model.SponsorCode will act as Introducer code
+                        _SPRepository.AgentSponsorRegistrationConditions(LatestAgentCode, agentApplicableSponsorCode, model.SponsorCode, model.Position);
                         //Client specific code for bright
                         if (model.PhoneNumber != string.Empty && Request.Url.AbsoluteUri.ToLower().Contains("brightfuturemart"))
                         {
@@ -145,7 +151,7 @@ namespace MLM.Controllers
 
                        
                         await SignInAsync(user, isPersistent: false);
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToRoute("AngularCatchAllRoute");
                     }
                     else
                     {
@@ -154,6 +160,7 @@ namespace MLM.Controllers
                 }
                 catch (System.Exception e)
                 {
+                    // Delete agent if created and error occured after that.
 
                     throw e;
                 }

@@ -70,6 +70,7 @@ namespace MLM.Web
                         "~/Scripts/angular/angular-route.js",
                         "~/Scripts/angular/angular-sanitize.js",
                         "~/Scripts/angular/angular-animate.js",
+                        "~/Scripts/angular/ui-grid.js",
                 //////////////////////
 
                         /////DEBUG SCRIPTS//////
@@ -77,25 +78,31 @@ namespace MLM.Web
                 //////////////////////
 
                         "~/Scripts/jquery-{version}.js",
-                        //"~/Scripts/lodash.js",
+                //"~/Scripts/lodash.js",
                         "~/Scripts/underscore.js",
                         "~/Scripts/bootstrap-datepicker.js",
                         "~/Scripts/jlinq.min.js",
                         "~/Scripts/moment.min.js",
                         "~/Scripts/angular-cache.js",
                         "~/Scripts/deferredWithUpdate.js"
-                        //"~/Scripts/sonic.js"
+                //"~/Scripts/sonic.js"
                         )
                        .IncludeDirectory("~/App/components", "*.js", true)
                        .LocalizationJs("en")
             );
 
             bundles.Add(new StyleBundle("~/bundles/mlmTheme")
-                            //.Include("~/App/styles/helpers/animate.minified.css")
-                            //.Include("~/Content/bootstrap-dropdown.css")
-                            //.Include("~/Content/bootstrap-datepicker.css")
+                //.Include("~/App/styles/helpers/animate.minified.css")
+                //.Include("~/Content/bootstrap-dropdown.css")
+                //.Include("~/Content/bootstrap-datepicker.css")
                             .Include("~/App/styles/main.css")
                 );
+
+            //bundles.Add(new ScriptBundle("~/Scripts/uigrid")
+            //    .Include("~/Scripts/uigrid/ui-grid.js"));
+
+            bundles.Add(new StyleBundle("~/Content/uigridcss")
+                .Include("~/Content/uigrid/ui-grid.css"));
 
             // If we want to bundle without minification, we need to remove all the transform objects
             foreach (var bundle in BundleTable.Bundles)
