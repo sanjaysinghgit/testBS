@@ -3,11 +3,11 @@
  * Copyright (c) 2015 ; License: MIT 
  */
 .ui-grid {
-  border: 1px solid #d4d4d4;
+  border: 2px solid #fc8f8f;
   box-sizing: content-box;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
-  border-radius: 0px;
+  border-radius: 1px;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -o-transform: translateZ(0);
@@ -24,7 +24,7 @@
   width: 1px;
 }
 .ui-grid-header-cell:not(:last-child) .ui-grid-vertical-bar {
-  background-color: #d4d4d4;
+  background-color: #93c31b;
 }
 .ui-grid-cell:not(:last-child) .ui-grid-vertical-bar {
   background-color: #d4d4d4;

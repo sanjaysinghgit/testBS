@@ -44,6 +44,8 @@ namespace MLM.Controllers
                 //return UserManager.FindById(User.Identity.GetUserId());
                 var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new MLMDbContext("MLMCon")));
                 var user = manager.FindById(User.Identity.GetUserId());
+                
+
 
                 var userIdentity = (ClaimsIdentity)User.Identity;
                 var claims = userIdentity.Claims;

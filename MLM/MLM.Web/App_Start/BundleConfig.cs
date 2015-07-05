@@ -21,6 +21,7 @@ namespace MLM.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/bootstrap_min.js",
+                       
                         "~/Scripts/jqBootstrapValidation.js"
 
                         )
@@ -31,13 +32,11 @@ namespace MLM.Web
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/mvcapp").Include(
-                        "~/Scripts/mvcApp/mainmvcapp.js"));
+                        "~/Scripts/mvcApp/mainmvcapp.js",
+                         "~/Scripts/mvcApp/Topachivers.js"
+                      ));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-            //            "~/Scripts/modernizr-*"));
-
+            
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/bootstrap.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -53,7 +52,17 @@ namespace MLM.Web
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+
+            bundles.Add(new StyleBundle("~/Content/Bootstrap/css")
+   .IncludeDirectory("~/Content/Bootstrap/css", "*.css", true));
+            bundles.Add(new StyleBundle("~/Content/Bootstrap/asset/css")
+  .IncludeDirectory("~/Content/Bootstrap/asset/css", "*.css", true));
+            bundles.Add(new StyleBundle("~/Content/Bootstrap/css/colors")
+ .IncludeDirectory("~/Content/Bootstrap/css/colors", "*.css", true));
+
             #endregion
+
 
 
             var scriptBundle = new ScriptBundle("~/bundles/MLMJs");
@@ -71,14 +80,7 @@ namespace MLM.Web
                         "~/Scripts/angular/angular-sanitize.js",
                         "~/Scripts/angular/angular-animate.js",
                         "~/Scripts/angular/ui-grid.js",
-                //////////////////////
-
-                        /////DEBUG SCRIPTS//////
-                // "~/Scripts/localDevelopment/livereload.debug.js",
-                //////////////////////
-
                         "~/Scripts/jquery-{version}.js",
-                //"~/Scripts/lodash.js",
                         "~/Scripts/underscore.js",
                         "~/Scripts/bootstrap-datepicker.js",
                         "~/Scripts/jlinq.min.js",
@@ -92,14 +94,11 @@ namespace MLM.Web
             );
 
             bundles.Add(new StyleBundle("~/bundles/mlmTheme")
-                //.Include("~/App/styles/helpers/animate.minified.css")
-                //.Include("~/Content/bootstrap-dropdown.css")
-                //.Include("~/Content/bootstrap-datepicker.css")
+               
                             .Include("~/App/styles/main.css")
                 );
 
-            //bundles.Add(new ScriptBundle("~/Scripts/uigrid")
-            //    .Include("~/Scripts/uigrid/ui-grid.js"));
+            
 
             bundles.Add(new StyleBundle("~/Content/uigridcss")
                 .Include("~/Content/uigrid/ui-grid.css"));
@@ -111,8 +110,9 @@ namespace MLM.Web
             // Do not explicitly turn on optimization, leave it to debug setting in web.config
             //BundleTable.EnableOptimizations = true;
 
-
-
+          
+                bundles.Add(new ScriptBundle("~/javascripts/layout")
+    .IncludeDirectory("~/Content/Bootstrap","*.js",true));
 
 
         }
@@ -132,6 +132,9 @@ namespace MLM.Web
                 ignoreList.Ignore("*.min.css", OptimizationMode.WhenDisabled);
             }
         }
+
+
+        
 
     }
 }

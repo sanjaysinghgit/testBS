@@ -32,7 +32,7 @@ namespace MLM.Controllers
         {
             var context = new MLMDbContext("MLMCon");
             var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
-            
+
             // The default Validators that the UserManager uses are UserValidator and MinimumLengthValidator
             // You can tweak some of the settings as follows
             // This example sets the Password length to be 3 characters
@@ -40,7 +40,7 @@ namespace MLM.Controllers
             {
                 AllowOnlyAlphanumericUserNames = false
             };
-             UserManager.PasswordValidator = new MinimumLengthValidator(3);
+            UserManager.PasswordValidator = new MinimumLengthValidator(3);
 
 
             if (ModelState.IsValid)
@@ -105,7 +105,7 @@ namespace MLM.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            return View("Index",model);
+            return View("Index", model);
         }
     }
 }

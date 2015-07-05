@@ -32,7 +32,7 @@ namespace MLM.Controllers
             // This claimsIdentity should have a claim called LastLoginTime
             var authManager = HttpContext.GetOwinContext().Authentication;
             authManager.SignIn(claimsIdentity);
-            
+
             return RedirectToLocal(returnUrl);
         }
         private ActionResult RedirectToLocal(string returnUrl)

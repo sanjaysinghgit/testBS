@@ -5,7 +5,7 @@
     '$location',
     'cacheManager',
     'agentRepository',
-    'agentTreeList',
+    'agentTreeList',    
     function (
         $scope,
         $route,
@@ -27,14 +27,42 @@
         //    $('#chart').show();
         //    ele = '#chart';
         //}
-        
-        
+        console.log("Agent details")
+        //$scope.FixagentName = agentRepository.;
+        //console.log($scope.FixagentName)
+        //var agentDataCode = $route.current.locals.agentTree;
+        //agentRepository.getAgentDetails(agentCode).then(function (agentDataCode) {
+        //    console.log(agentData);
+        //    if (agentDataCode) {
+        //        $scope.AgentDetails = agentDataCode;
+        //        //$scope.AgentDetails.TotalPair = agentData.TotalRight > agentData.TotalLeft ? agentData.TotalRight : agentData.TotalLeft;
+        //        //$scope.AgentDetails.CarryLeft = agentData.TotalLeft > agentData.TotalRight ? (agentData.TotalLeft - agentData.TotalRight) : 0;
+        //        //$scope.AgentDetails.CarryRight = agentData.TotalRight > agentData.TotalLeft ? (agentData.TotalRight - agentData.TotalLeft) : 0;
+                
+        //        //deferred.resolve(agentData);
+        //    }
+        //}, function (error) {
+        //    //deferred.reject(error);
+        //    console.log("error in agent CTRL: " + error)
+        //});
+
+        var ncount = 1;
 
         var data = [];
         console.log("");
         var agentData = $route.current.locals.agentTree;
         _.each(agentData, function (item) {
             data.push(function () {
+                if (ncount == 1)
+                  {
+                    
+                   // $scope.Fixagentcode= item.AgentCode;
+                   // $scope.Fixagentparent= item.SponsorCode;
+                    //$scope.Fixagentposition= item.Position;
+                   // $scope.Fixagentstatus= item.Status;
+                    $scope.FixagentstatusName = AgentStatus(item);                    
+                    ncount = ncount + 1
+                    }
                 return {
                     name: item.AgentCode,
                     parent: item.SponsorCode,
@@ -99,10 +127,7 @@
                 // parent is null or missing
                 treeData.push(node);
             }
-        });
-
-
-        
+        });       
 
 
 
@@ -328,7 +353,7 @@
             update(d);
         }
         
-
+       // $scope.FixagentName = "Akhilesh";
         // var adata = [
         //{ "name": "Level 2: A", "parent": "Top Level" },
         //{ "name": "Top Level", "parent": "null" },
@@ -337,6 +362,17 @@
         //{ "name": "Level 2: B", "parent": "Top Level" }
         // ];
 
+       // function Agent_Detail() {
+       //     var agentDetails = $route.current.locals.agentTree;
 
+       //     for (var prop in agentDetails) {
+       //         // object[prop]
+       //       //$scope.FixagentCode = prop.AgentCode;
+       //         $scope.FixagentName = prop.AgentName;
+       //        break;
+       //        }
+       // }
+
+       //Agent_Detail();
 
     }]);

@@ -149,7 +149,7 @@ namespace MLM.Controllers
                         //    str = SMSService.SendMessage(model.PhoneNumber, msg, "N");
                         //}
 
-                       
+
                         await SignInAsync(user, isPersistent: false);
                         return RedirectToRoute("AngularCatchAllRoute");
                     }
@@ -342,7 +342,7 @@ namespace MLM.Controllers
                     return View("ExternalLoginFailure");
                 }
                 var user = new ApplicationUser() { UserName = model.UserName };
-                
+
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

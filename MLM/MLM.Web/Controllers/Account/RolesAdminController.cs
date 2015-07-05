@@ -110,10 +110,10 @@ namespace MLM.Controllers
             if (ModelState.IsValid)
             {
                 var result = await RoleManager.UpdateAsync(role);
-                if(!result.Succeeded)
+                if (!result.Succeeded)
                 {
                     ModelState.AddModelError("", result.Errors.First().ToString());
-                    return View();   
+                    return View();
                 }
                 return RedirectToAction("Index");
             }

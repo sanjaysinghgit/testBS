@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using MLM.Web.Models;
 using MLM.Models.Config;
 
+
 namespace MLM.DB
 {
     public class MLMDbContext : IdentityDbContext<ApplicationUser>
@@ -134,7 +135,11 @@ namespace MLM.DB
         public DbSet<PairPrizeWinner> PairPrizeWinners { get; set; }
         #endregion
         // public DbSet<Student> Students { get; set; }
-        
-        
+        #region TopAchivars
+        public DbSet<TopAchivar> TopAchivars { get; set; }
+        #endregion
+
+
+
     }
 }

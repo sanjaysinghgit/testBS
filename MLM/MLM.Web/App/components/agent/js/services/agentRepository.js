@@ -12,6 +12,10 @@ factory('agentRepository', ['$resource', '$q', 'bLog', 'agentTreeCache', 'profil
     { agentcode: '@agentcode' },
     { get: { method: 'GET', isArray: false } }
     );
+    //var getAgentPayOutResource = $resource(Url.resolve('Agent/Payout/:agentcode'),
+    //{ agentcode: '@agentcode' },
+    //{ get: { method: 'GET', isArray: false } }
+    //);
     var getCurrentUserResource = $resource(Url.resolve('ApplicationUser/GetCurrentUser'), null,
         { get: { method: 'GET', isArray: false } }
     );
@@ -63,6 +67,23 @@ factory('agentRepository', ['$resource', '$q', 'bLog', 'agentTreeCache', 'profil
                     });
             return deferred.promise;
         },
+        //getAgentPayOut : function (agentcode) {
+
+        //    var deferred = $q.defer();
+
+        //    var requestParams = { agentcode: agentcode };
+
+
+        //    getAgentDetailResource.get(requestParams, function (res) {
+        //        deferred.resolve(res);
+        //    },
+        //        function (err) {
+        //            deferred.reject(err);
+        //            //bLog.serverError("Server Error", err);
+        //            console.log("Error: " + err);
+        //        });
+        //    return deferred.promise;
+        //},
         getAllAgents: function () {
 
             var requestParams = {};

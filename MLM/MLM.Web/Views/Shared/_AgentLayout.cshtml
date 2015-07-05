@@ -9,7 +9,7 @@
 
     @Styles.Render("~/Content/css")
     @*@Scripts.Render("~/bundles/modernizr")*@
-
+     @Styles.Render("~/Content/uigridcss")
     <!-- Define Charset -->
     <meta charset="utf-8">
 
@@ -92,43 +92,14 @@
 
         <!-- Start Header Section -->
         <div class="hidden-header" style="height: 112px;"></div>
+      
+
+
+        <!--Start New Header -->
+
         <header class="clearfix">
 
-            <!-- Start Top Bar -->
-            <div class="top-bar" style="display: block;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li>
-                                    <a href="#"><i class="fa fa-map-marker"></i>204, 2nd Floor, Puneet Vrindavan Tower, Sanjay Place, Agra-2</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-envelope-o"></i> info@recentmart.in</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-phone"></i> 9897496428</a>
-                                </li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div><!-- .col-md-6 -->
-                        <div class="col-md-5">
-                            <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li>
-                                    <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                            </ul>
-                            <!-- End Social Links -->
-                        </div><!-- .col-md-6 -->
-                    </div><!-- .row -->
-                </div><!-- .container -->
-            </div><!-- .top-bar -->
-            <!-- End Top Bar -->
+           
             <!-- Start  Logo & Naviagtion  -->
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
@@ -138,23 +109,14 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a class="navbar-brand" href="/Home/Index" style="padding-top: 27px; padding-bottom: 100px;">
-                            <img alt="" src="~/Content/Bootstrap/images/m-2.png" @*style="height:50px*@">
+                        <a style="margin-top:-33px; class=" navbar-brand" href="/Home/Index">
+                            <img alt="" src="~/Content/Bootstrap/images/logo1.png">
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
-                        <!-- Stat Search -->
-                        <div class="search-side">
-                            <a href="#" class="show-search"><i class="fa fa-search"></i></a>
-                            <div class="search-form">
-                                <form autocomplete="off" role="search" method="get" class="searchform" action="#">
-                                    <input type="text" value="" name="s" id="s" placeholder="Search the site...">
-                                </form>
-                            </div>
-                        </div>
-                        <!-- End Search -->
+                       
                         <!-- Start Navigation List -->
-                        @Html.Partial("_AgentNavigationPartial")
+                       @Html.Partial("_AgentNavigationPartial")
                         <!-- End Navigation List -->
                     </div>
                 </div>
@@ -162,6 +124,7 @@
             <!-- End Header Logo & Naviagtion -->
 
         </header>
+
         <!-- End Header Section -->
         <div ng-view></div>
         @RenderBody()

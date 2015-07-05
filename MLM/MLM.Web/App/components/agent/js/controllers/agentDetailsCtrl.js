@@ -23,8 +23,7 @@
              ) {
         console.log("In agentDetailsCtrl");
         $scope.CurrentUser = $route.current.locals.currentUser;
-
-
+        
         function getAgentDetails(agentCode) {
 
             var deferred = $q.defer();
@@ -48,7 +47,7 @@
             $scope.AgentDetails = deferred.promise;
             return deferred.promise;
         }
-
+        //console.log($route.current.locals.currentUser.AgentInfo.Code);
         getAgentDetails($route.current.locals.currentUser.AgentInfo.Code);
 
 

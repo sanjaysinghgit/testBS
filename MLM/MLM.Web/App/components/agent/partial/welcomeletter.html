@@ -1,0 +1,69 @@
+﻿<!--<div class="page-banner" style="padding:40px 0; background: url(images/slide-02-bg.jpg) center #f9f9f9;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <p>We Are Professional</p>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumbs">
+                    <li><a href="#">Home</a></li>
+                    <li>About Us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<!-- Start News & Skill Section -->
+
+
+<div id="content">
+    <div class="container">
+        <div class="page-content">
+            <div class="row">
+                <div style="margin-left:150px;margin-right:150px; " >
+
+                    <!-- Classic Heading -->
+                    <center>
+                        <h4 class="classic-title"><span>Hello <strong>{{ CurrentUser.Name }}</strong>! Welcome To Bright future.</span></h4>
+                    </center>
+                    <!--<div class="plan-list">
+                        <ul>
+                            <li><strong>Name</strong> {{ CurrentUser.Name }}</li>
+                            <li><strong>Status</strong> {{CurrentUser.AgentInfo.Status == 2 ? "Active" : "Pending"}}</li>
+                            <li><strong>Position</strong> {{ CurrentUser.AgentInfo.Position == 1 ? "Left" : "Right" }}</li>
+                            <li><strong>Sponsor Code</strong> {{ CurrentUser.AgentInfo.SponsorCode == null ? "At Company Level" : CurrentUser.AgentInfo.SponsorCode }}</li>
+                            <li><strong>Total Pair</strong> {{ AgentDetails.TotalPair }}</li>
+                            <li><strong>Total Left</strong> {{ AgentDetails.TotalLeft }}   <strong>Total Right</strong> {{ AgentDetails.TotalRight }}</li>
+                            <li><strong>Carry Left</strong> {{ AgentDetails.CarryLeft }}/{{AgentDetails}}    <strong>Carry Right</strong> {{ AgentDetails.CarryRight }}</li>
+                        
+                        </ul>
+                    </div>-->
+                    <center>
+                        <table style="font-weight:bold;text-align:left">
+                            <tr><td>Name</td><td> &nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>{{ CurrentUser.Name }}</td></tr>
+                            <tr><td>Agent Code</td><td>&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>{{CurrentUser.AgentInfo.Code}}</td></tr>
+                            <tr><td>Status</td><td>&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>{{CurrentUser.AgentInfo.Status == 2 ? "Active" : "Pending"}}</td></tr>
+                            <tr><td>Position</td><td>&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>{{ CurrentUser.AgentInfo.Position == 1 ? "Left" : "Right" }}</td></tr>
+                            <tr><td>Sponsor Code</td><td>&nbsp;&nbsp;&nbsp; : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>{{ CurrentUser.AgentInfo.SponsorCode == null ? "At Company Level" : CurrentUser.AgentInfo.SponsorCode }}</td></tr>
+
+                        </table>
+                    </center>
+                    <br />
+
+                    <!-- Some Text -->
+                    <p> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Congratulations <strong>{{ CurrentUser.Name }}</strong> you having taken a right decision in your life. You are joining the Company which is going to create HISTORY IN THE NETWORK MARKETING BUSINESS. We have brought about a LOW-COST CONCEPT that has the power to radically change your LIFE STYLE. Your search for FAME, MONEY, HAPPINESS and SUCCESS has ended the moment you took the decision to be part of our ever growing Recent Mart family.</p>
+                    <p>Recent Mart is a Product Base Company. It aims to bring happy and prosperous life to millions of people by forming meaningful ,long lasting and mutually rewarding business association. It has built up its base through distinguished quality products and income plans the quality of which is being widely honored and acclaimed. It has a unique business solution for all class of people to earn unlimited income.</p>
+
+                    <br/><br/><br />
+                    <p><b>Authorized signatory</b></p>
+                    <br /><br />
+                    <p><b>Bright future Infraland India</b></p>
+                </div>                
+
+            </div>
+
+        </div>
+    </div>
+</div>

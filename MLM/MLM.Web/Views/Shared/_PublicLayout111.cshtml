@@ -1,0 +1,123 @@
+﻿<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Basic -->
+    <title>BMart | Home</title>
+
+    @Styles.Render("~/Content/css")
+    <!--@Scripts.Render("~/bundles/modernizr")-->
+   
+    @Styles.Render("~/Content/Bootstrap/css")
+     @Styles.Render("~/Content/Bootstrap/asset/css")
+     @Styles.Render("~/Content/Bootstrap/css/colors")
+    <!-- Define Charset -->
+    <meta charset="utf-8">
+
+    <!-- Responsive Metatag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Page Description and Author -->
+    <meta name="description" content="Bright Future">
+    <meta name="author" content="Bright Products">
+
+    
+
+
+
+
+
+    
+<link rel="stylesheet" type="text/css" href="~/Content/Bootstrap/css/style.css" media="screen">
+    <!--<script type="text/javascript" src="~/Content/Bootstrap/asset/js/bootstrap.min.js"></script>-->
+    
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <!-- Full Body Container -->
+    <div id="container" class="boxed-page">
+
+
+        <!-- Start Header Section -->
+        <div class="hidden-header"></div>
+        <header class="clearfix">
+
+           
+            <!-- Start  Logo & Naviagtion  -->
+            <div class="navbar navbar-default navbar-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <!-- Stat Toggle Nav Link For Mobiles -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- End Toggle Nav Link For Mobiles -->
+                        <a style="margin-top:-33px; class=" navbar-brand" href="/Home/Index">
+                            <img alt="" src="~/Content/Bootstrap/images/logo1.png">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                       
+                        <!-- Start Navigation List -->
+                        @Html.Partial("_PublicNavigationPartial")
+                        <!-- End Navigation List -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Header Logo & Naviagtion -->
+
+        </header>
+        <!-- End Header Section -->
+        @RenderBody()
+
+        <!-- Start Products Part -->
+       
+		<!-- End Content -->
+
+        <!-- Start Footer Section -->
+        @Html.Partial("_FooterPartial")
+        <!-- End Footer Section -->
+
+    </div>
+    <p>
+        <!-- End Full Body Container -->
+    </p>
+    <p>
+
+        <!-- Go To Top Link -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    </p>
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+     
+    @Scripts.Render("~/bundles/bootstrap")
+
+  @Scripts.Render("~/bundles/mvcapp")
+    @Styles.Render("~/bundles/mlmTheme")
+   
+    @RenderSection("scripts", required: false)
+
+    
+
+
+</body>
+
+</html>
+
+

@@ -18,7 +18,7 @@
     <meta name="author" content="iThemesLab">*@
 
     <!-- angular js scripts-->
-
+    @*<a href="~/Views/Shared/ProductLayout.cshtml">~/Views/Shared/ProductLayout.cshtml</a>*@
      <script src="~/Scripts/angular.min.js"></script>    
     <script src="~/Scripts/angular.js"></script>
     @*<script src="~/Scripts/bootstrap.min.js"></script>*@
@@ -108,49 +108,14 @@
 
 <body>
 
-    <!-- Full Body Container -->
-    <div id="container" class="boxed-page">
-        
-        
-        <!-- Start Header Section --> 
+   <div id="container" class="boxed-page">
+
+
+        <!-- Start Header Section -->
         <div class="hidden-header"></div>
         <header class="clearfix">
-            
-            <!-- Start Top Bar -->
-            <div class="top-bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-7">
-                            <!-- Start Contact Info -->
-                            <ul class="contact-details">
-                                <li><a href="#"><i class="fa fa-map-marker"></i> Puneet Virndavan Tower Sanjay Place Agra</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-envelope-o"></i> info@recentmart.in</a>
-                                </li>
-                                <li><a href="#"><i class="fa fa-phone"></i> 9897496428</a>
-                                </li>
-                            </ul>
-                            <!-- End Contact Info -->
-                        </div><!-- .col-md-6 -->
-                        <div class="col-md-5">
-                            <!-- Start Social Links -->
-                            <ul class="social-list">
-                                <li>
-                                    <a class="facebook itl-tooltip" data-placement="bottom" title="Facebook" href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a class="twitter itl-tooltip" data-placement="bottom" title="Twitter" href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                               
-                            </ul>
-                            <!-- End Social Links -->
-                        </div><!-- .col-md-6 -->
-                    </div><!-- .row -->
-                </div><!-- .container -->
-            </div><!-- .top-bar -->
-            <!-- End Top Bar -->
-            
-            
+
+           
             <!-- Start  Logo & Naviagtion  -->
             <div class="navbar navbar-default navbar-top">
                 <div class="container">
@@ -160,8 +125,8 @@
                             <i class="fa fa-bars"></i>
                         </button>
                         <!-- End Toggle Nav Link For Mobiles -->
-                        <a style="margin-top:-33px; class="navbar-brand" href="/Home/Index">
-                            <img alt="" src="~/Content/Bootstrap/images/logo.png">
+                        <a style="margin-top:-33px; class=" navbar-brand" href="/Home/Index">
+                            <img alt="" src="~/Content/Bootstrap/images/logo1.png">
                         </a>
                     </div>
                     <div class="navbar-collapse collapse">
@@ -176,120 +141,34 @@
                         </div>
                         <!-- End Search -->
                         <!-- Start Navigation List -->
-                        @*<ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a class="active" href="/Home/Index">Home</a>
-                                <!--<ul class="dropdown">
-                                    <li><a class="active" href="index.html">Home RMart</a>
-                                    </li>
-                                    <li><a href="index-01.html">Home Version 1</a>
-                                    </li>
-                                    <li><a href="index-02.html">Home Version 2</a>
-                                    </li>
-                                    <li><a href="index-03.html">Home Version 3</a>
-                                    </li>
-                                    <li><a href="index-04.html">Home Version 4</a>
-                                    </li>
-                                    <li><a href="index-05.html">Home Version 5</a>
-                                    </li>
-                                    <li><a href="index-06.html">Home Version 6</a>
-                                    </li>
-                                    <li><a href="index-07.html">Home Version 7</a>
-                                    </li>
-                                </ul>-->
-                            </li>
-                           <li>
-                                <a href="/Home/about">About</a>
-                                <ul class="dropdown">
-                                    <li><a href="/Home/about">About Recent Mart</a>
-                                    </li>
-                                    <li><a href="#">About Group</a>
-                                    </li>
-                                    <li><a href="/Home/ChairmanMsg">Chairman's Message</a>
-                                    </li>
-                                    <li><a href="#">Legal</a>
-                                    </li>
-                                    
-                                </ul>
-
-
-
-                           </li>
-                            <li>
-                                <a href="/Home/BusinessPlan">Business Plan</a>
-                                <!--<ul class="dropdown">
-                                    <li><a href="tabs.html">Tabs</a>
-                                    </li>
-                                    <li><a href="buttons.html">Buttons</a>
-                                    </li>
-                                    <li><a href="action-box.html">Action Box</a>
-                                    </li>
-                                    <li><a href="testimonials.html">Testimonials</a>
-                                    </li>
-                                    <li><a href="latest-posts.html">Latest Posts</a>
-                                    </li>
-                                    <li><a href="latest-projects.html">Latest Projects</a>
-                                    </li>
-                                    <li><a href="pricing.html">Pricing Tables</a>
-                                    </li>
-                                    <li><a href="animated-graphs.html">Animated Graphs</a>
-                                    </li>
-                                    <li><a href="accordion-toggles.html">Accordion & Toggles</a>
-                                    </li>
-                                </ul>-->
-                               </li>
-                            <li>
-                                <a href="/Products/Productpage">Products</a>
-                                <ul class="dropdown">
-                                    <li><a href="/Products/Productpage">FMCG</a>
-                                    </li>
-                                    <li><a href="/Products/Productpage">Orgenic</a>
-                                    </li>
-                                    <li><a href="/Products/Productpage">All</a>
-                                    </li>
-                                   
-                                </ul>
-                            </li>
-                            <li><a href="#">Login</a>
-                          </li>
-                            <li>
-                                <a href="/Contactus/Index">Contect Us</a>
-                                
-                          </li>
-                            
-                        </ul>*@
-                         @Html.Partial("_PublicNavigationPartial")
+                        @Html.Partial("_PublicNavigationPartial")
                         <!-- End Navigation List -->
                     </div>
                 </div>
             </div>
             <!-- End Header Logo & Naviagtion -->
-            
-        </header> 
+
+        </header>
         <!-- End Header Section -->
-
-
         @RenderBody()
 
 
 
      <!-- Start Footer Section -->
        
+         <!-- Start Footer Section -->
         @Html.Partial("_FooterPartial")
-    
-    
         <!-- End Footer Section -->
-        
-        
+
     </div>
     <p>
-      <!-- End Full Body Container -->
+        <!-- End Full Body Container -->
     </p>
     <p>
-      
-      <!-- Go To Top Link -->
-      <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-      
+
+        <!-- Go To Top Link -->
+        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
     </p>
     <div id="loader">
         <div class="spinner">
@@ -297,10 +176,10 @@
             <div class="dot2"></div>
         </div>
     </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 
-  
 </body>
 
 </html>
-
-

@@ -81,9 +81,15 @@ function (
                 //permissionContext: 'home',
                 //cache: true
             })
+            .when('/auth/agent/Welcome', {
+                templateUrl: Url.resolveLocal('components/agent/partial/welcomeletter.html'),
+                controller: 'agentDetailsCtrl',
+                resolve: agentDependencies,
+                cache: true
+            })
             .when('/auth/agent/Tree/Binary', {
                 templateUrl: Url.resolveLocal('components/agent/partial/agentBTree.html'),
-                controller: 'agentBTreeCtrl',
+                controller: 'agentBTreeCtrl',                
                 resolve: agentDependencies,
                 cache: true
             })
@@ -99,6 +105,12 @@ function (
             resolve: agentDependencies,
             cache: true
         })
+        .when('/auth/agent/payout', {
+            templateUrl: Url.resolveLocal('components/payout/partial/payoutList.html'),
+            controller: 'payoutCtrlAgent',
+            resolve: agentDependencies,
+            //cache: true
+        })
         ///////////////////// Payout routes /////////////////
         .when('/auth/payout/list', {
             templateUrl: Url.resolveLocal('components/payout/partial/payoutList.html'),
@@ -107,6 +119,16 @@ function (
             //cache: true
         })
 
+
+         ///////////////////// Top Achivers  /////////////////
+        .when('/auth/payout/list', {
+            templateUrl: Url.resolveLocal('components/payout/partial/payoutList.html'),
+            controller: 'payoutCtrl',
+            //resolve: agentDependencies,
+            //cache: true
+        })
+
+        
 
         /////////////////////////////////
         // Handle incoming email links //
