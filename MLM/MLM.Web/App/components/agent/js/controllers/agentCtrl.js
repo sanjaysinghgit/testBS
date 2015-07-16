@@ -35,6 +35,38 @@
             });
         }
 
+
+
+        $scope.gridOptions = {
+            data: 'agentData',
+
+            rowHeight: 30,
+            enableCellEdit: true,
+
+            selectedItems: $scope.mySelections,
+            multiSelect: false,
+            columnDefs: [
+                { field: 'Id', displayName: 'ID', width: 50 },
+                //{ field: 'Code', displayName: 'Agency Code' },
+                { field: 'SponsorCode', displayName: 'Spo Code' },
+
+                //{ field: 'Achivarprizename', displayName: 'Prize' },
+
+                //{ field: 'CreatedDate', displayName: 'Date' },
+                // {
+                //     field: 'Edit',
+                //     cellTemplate: '<div ><button type="button" ng-click="grid.appScope.topachivarEdit(row.entity)" >Edit</button> <button type="button"  ng-click="grid.appScope.delete(row.entity.Id)" >Delete</button></div>'
+                //     //ellTemplate2: '<button type="button" ng-click="grid.appScope.topachivarEdit(row.entity)" >Delete</button> '
+                // }
+
+
+            ]
+        };
+
+
+
+
+
         getAgents();
             
 }]);

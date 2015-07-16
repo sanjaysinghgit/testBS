@@ -1,9 +1,9 @@
 <ul class="nav navbar-nav navbar-left">
-    <li>
+   <!-- <li>
         @Html.ActionLink("Home", "Index", "Home", null, new { target = "_self" })
-    </li>
+    </li>-->
     <li>
-        <a href="auth/agent/Details">Agent</a>
+        <a href="auth/agent/Details">My Profile</a>
         <ul class="dropdown">
             <li>
                 <a href="auth/agent/Welcome">Welcome Letter</a>
@@ -17,14 +17,23 @@
             <li>
                 <a href="auth/agent/Tree/Generation">My Generation Tree</a>
             </li>
-            <li>
-                <a href="auth/agent/payout">PayOut</a>
-            </li>
+            
         </ul>
     </li>
-    <li>
+            <li>
+                <a href="auth/agent/Details">My Wallet</a>
+                    <ul class="dropdown">
+                        <li>
+                        <a href="auth/agent/payout">PayOut</a>
+                        </li>
+                    </ul>
+            </li>
+
+
+
+   <!-- <li>
         @Html.ActionLink("Contact Us", "Contactus", "Home", null, new { target = "_self" })
 
-    </li>
+    </li>-->
 </ul>
 @Html.Partial("_LoginPartial")

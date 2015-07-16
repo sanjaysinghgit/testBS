@@ -1,0 +1,55 @@
+﻿
+
+<div id="content" >
+    <div class="container">
+        <div class="page-content">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+
+
+                    <section id="loginForm">
+                        <form ng-submit="save()" name="myform" method="post" class="form-horizontal">
+                            <h3 style="text-align:center">Latest News</h3>
+                            <hr />
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name"> Title:</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="name" name="name" ng-model="NewsTitle">
+                                    <input type="hidden" name="Language" value="English" ng-model="Id">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="AgencyCode">News Details:</label>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="text" id="AgencyCode" name="AgencyCode" ng-model="NewsDetails">
+                                    <button class="btn btn-default" id="upd">Save</button>
+                                </div>
+                            </div>
+
+                            
+                                
+                                
+                        
+                           <!-- <div class="col-md-offset-2 col-md-10"><input class="btn btn-default" type="submit" name="Save" id="Save"></div>-->
+                            
+
+
+                            <div>
+                                <h1>
+                                    News List
+                                </h1>
+                            </div>
+                            <div class="grid" ui-grid="gridOptions"></div>
+                            
+                        </form>
+                    </section>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+            
+        </div>
+    </div>
+</div>

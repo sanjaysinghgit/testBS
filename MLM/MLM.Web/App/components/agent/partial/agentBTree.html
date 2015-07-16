@@ -5,43 +5,40 @@
             <div class="row pricing-tables">
                 <div class="col-md-12 col-sm-12">
                     <div class="pricing-table  highlight-plan">
+
+                        <!--<div class="plan-list" class="plan-name">-->
+                        <div class="plan-name">
+                            <div class="row">
+                                <div class="col-md-3"><h4>Name:- {{ CurrentUser.Name }}</h4></div>
+                                <div class="col-md-3"><h4>Status:- {{CurrentUser.AgentInfo.Status == 2 ? "Active" : "Pending"}}</h4></div>
+                                <div class="col-md-3"><h4>Position:-  {{ CurrentUser.AgentInfo.Position == 1 ? "Left" : "Right" }}</h4></div>
+                                <div class="col-md-3"><h4> Sponsor Code:- {{ CurrentUser.AgentInfo.SponsorCode == null ? "At Company Level" : CurrentUser.AgentInfo.SponsorCode }}</h4></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4"><h4>Total Pair :- {{ AgentDetails.TotalPair }}</h4></div>
+                                <div class="col-md-4"><h4>Total Left:- {{ AgentDetails.TotalLeft }} </h4><h4>Total Right:- {{ AgentDetails.TotalRight }} </h4></div>
+                                <div class="col-md-"><h4>Carry Left:- {{ AgentDetails.CarryLeft }} </h4><h4>Carry Right:- {{ AgentDetails.CarryRight }} </h4></div>
+                               
+                            </div>
+                             </div>
+
                         <div class="plan-name">
                             <h3>My Binary Tree</h3>
-                        </div> 
-                        <div >                            
-                            <!--<div class="plan-name" style="background-color:#FA5858 ">
-                                <ul>
-                                    <li><strong>Name</strong> </li>
-                                     <li><strong>Status</strong>{{ FixagentstatusName }}</li>
-                                    <li><strong>Position</strong> {{ Fixagentposition }}</li>
-                                    <li><strong>Sponsor Code</strong> {{ Fixagentparent }}</li>
-                                    <li><strong>Total Pair</strong> {{ AgentDetails.TotalPair }}</li> 
-                                    <li><strong>Total Left</strong> {{ AgentDetails.TotalLeft }}   <strong>Total Right</strong> {{ AgentDetails.TotalRight }}</li>
-                                    <li><strong>Carry Left</strong> {{ AgentDetails.CarryLeft }}   <strong>Carry Right</strong> {{ AgentDetails.CarryRight }}</li> 
-                                </ul>
-                            </div>--> 
+                        </div>
+                            </div>
 
-                            <!--<div class="plan-list" ng-controller="agentDetailsCtrl">
-                                <ul>
-                                    <li><strong>Name</strong> {{ CurrentUser.Name }}</li>
-                                    <li><strong>Status</strong> {{CurrentUser.AgentInfo.Status == 2 ? "Active" : "Pending"}}</li>
-                                    <li><strong>Position</strong> {{ CurrentUser.AgentInfo.Position == 1 ? "Left" : "Right" }}</li>
-                                    <li><strong>Sponsor Code</strong> {{ CurrentUser.AgentInfo.SponsorCode == null ? "At Company Level" : CurrentUser.AgentInfo.SponsorCode }}</li>
-                                    <li><strong>Total Pair</strong> {{ AgentDetails.TotalPair }}</li>
-                                    <li><strong>Total Left</strong> {{ AgentDetails.TotalLeft }}   <strong>Total Right</strong> {{ AgentDetails.TotalRight }}</li>
-                                    <li><strong>Carry Left</strong> {{ AgentDetails.CarryLeft }}   <strong>Carry Right</strong> {{ AgentDetails.CarryRight }}</li>
-                                </ul>
-                            </div>-->
-                        </div>                                               
-                        <div class="plan-price">
-                            <div id="Bchart" class="outer">
-                                <div class="inner">
+                   
 
+                            </div>
+                            <div class="plan-price" >
+
+                                <div id="Bchart" class="outer">
+                                    <div class="inner">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
-    </div>
-</div>
+   

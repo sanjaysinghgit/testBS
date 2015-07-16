@@ -33,7 +33,8 @@ namespace MLM.Web
 
             bundles.Add(new ScriptBundle("~/bundles/mvcapp").Include(
                         "~/Scripts/mvcApp/mainmvcapp.js",
-                         "~/Scripts/mvcApp/Topachivers.js"
+                         "~/Scripts/mvcApp/Topachivers.js",
+                         "~/Scripts/mvcApp/News.js"
                       ));
 
             

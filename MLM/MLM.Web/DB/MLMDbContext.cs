@@ -135,8 +135,10 @@ namespace MLM.DB
         public DbSet<PairPrizeWinner> PairPrizeWinners { get; set; }
         #endregion
         // public DbSet<Student> Students { get; set; }
-        #region TopAchivars
+        #region WebModels
         public DbSet<TopAchivar> TopAchivars { get; set; }
+
+        public DbSet<NewsModel> NewsModels { get; set; }
         #endregion
 
 

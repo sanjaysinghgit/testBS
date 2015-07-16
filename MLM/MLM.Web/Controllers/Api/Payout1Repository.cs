@@ -24,8 +24,8 @@ namespace MLM
         public PayoutsList(String agentCode, DateTime startDate, DateTime endDate)
         {
             if (!string.IsNullOrEmpty(agentCode) && startDate == Convert.ToDateTime("01-01-1900") && endDate ==Convert.ToDateTime( "01-01-1900") )
-            { 
-                this.predicate = tc => tc.AgentCode == agentCode;
+            {
+                this.predicate = tc => tc.AgentCode == agentCode && tc.IsDeleted == false;
             }
             else
             {

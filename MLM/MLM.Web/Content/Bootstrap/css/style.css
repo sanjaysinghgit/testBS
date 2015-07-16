@@ -1084,8 +1084,8 @@ ul.breadcrumbs li a {
 
 label {
 	font-size: 13px;
-	color: #aaa;
-	font-weight: 300;
+	color: #444;
+	font-weight: 400;
 	cursor: pointer;
 }
 
@@ -5696,4 +5696,9 @@ ul.footer-nav li a:hover {
 #fixsize{
     width:90px;
     height:180px;
+}
+
+.grid{
+    width:700px;
+    height:300px;
 }

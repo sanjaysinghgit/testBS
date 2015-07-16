@@ -97,7 +97,7 @@ namespace MLM.Controllers
                         throw new System.Exception("invalid sponsor code");
                     }
                     var LatestAgentCode = _AgentRepository.GetLatestAgentCode();
-                    var user = new ApplicationUser() { UserName = LatestAgentCode, DOB = model.DOB, Name = model.Name, Address = model.Address, PhoneNumber = model.PhoneNumber, Email = model.Email };
+                    var user = new ApplicationUser() { UserName = LatestAgentCode, DOB = model.DOB, Name = model.Name, FatherName = model.FatherName, Address = model.Address, PhoneNumber = model.PhoneNumber, Email = model.Email };
                     //user.HomeTown = model.HomeTown;
                     user.AgentInfo = new Agent()
                     {

@@ -3,6 +3,7 @@
     '$scope',
     '$route',
     '$location',
+     '$q',
     'cacheManager',
     'agentRepository',
     'agentTreeList',    
@@ -10,10 +11,39 @@
         $scope,
         $route,
         $location,
+        $q,
         cacheManager,
         agentRepository,
         agentTreeList
     ) {
+
+        $scope.CurrentUser = $route.current.locals.currentUser;
+        function getAgentDetails(agentCode) {
+            var deferred = $q.defer();
+            agentRepository.getAgentDetails(agentCode).then(function (agentData) {
+                console.log(agentData);
+                if (agentData) {
+                    $scope.AgentDetails = agentData;
+                    $scope.AgentDetails.TotalPair = agentData.TotalRight > agentData.TotalLeft ? agentData.TotalRight : agentData.TotalLeft;
+                    $scope.AgentDetails.CarryLeft = agentData.TotalLeft > agentData.TotalRight ? (agentData.TotalLeft - agentData.TotalRight) : 0;
+                    $scope.AgentDetails.CarryRight = agentData.TotalRight > agentData.TotalLeft ? (agentData.TotalRight - agentData.TotalLeft) : 0;
+                    deferred.resolve(agentData);
+                }
+            }, function (error) {
+                deferred.reject(error);
+                console.log("error in agent CTRL: " + error)
+            });
+            // Set the promise to the member variable to be accessed by other
+            // functions that have it as a dependency
+            $scope.AgentDetails = deferred.promise;
+            return deferred.promise;
+        }
+        //console.log($route.current.locals.currentUser.AgentInfo.Code);
+        getAgentDetails($route.current.locals.currentUser.AgentInfo.Code);
+
+
+
+
 
         //$scope.context = $route.current.params.typeMode;
         //var ele;
@@ -27,6 +57,7 @@
         //    $('#chart').show();
         //    ele = '#chart';
         //}
+        var MaxDepth = 1;
         console.log("Agent details")
         //$scope.FixagentName = agentRepository.;
         //console.log($scope.FixagentName)
@@ -54,15 +85,15 @@
         _.each(agentData, function (item) {
             data.push(function () {
                 if (ncount == 1)
-                  {
+                {
                     
-                   // $scope.Fixagentcode= item.AgentCode;
-                   // $scope.Fixagentparent= item.SponsorCode;
+                    // $scope.Fixagentcode= item.AgentCode;
+                    // $scope.Fixagentparent= item.SponsorCode;
                     //$scope.Fixagentposition= item.Position;
-                   // $scope.Fixagentstatus= item.Status;
+                    // $scope.Fixagentstatus= item.Status;
                     $scope.FixagentstatusName = AgentStatus(item);                    
                     ncount = ncount + 1
-                    }
+                }
                 return {
                     name: item.AgentCode,
                     parent: item.SponsorCode,
@@ -122,14 +153,19 @@
                 // create child array if it doesn't exist
                 (parent.children || (parent.children = []))
                     // add node to child array
-                    .push(node);
+                .push(node);
+             
+               
             } else {
                 // parent is null or missing
                 treeData.push(node);
+                    
             }
         });       
 
-
+        //var s;
+        //data.forEach(function (d) { s=  d.depth * 100; });
+        //consol.log(s);
 
         var margin = { top: 50, right: 120, bottom: 20, left: 120 },
              width = 960 - margin.right - margin.left,
@@ -143,6 +179,7 @@
         root.x0 = height / 2;
         root.y0 = 0;
 
+        //console.log(parseInt( treeData[0].depth));
         //if (d3.select("#chart").select("svg")) {
         //    update(root);
         //    return;
@@ -158,7 +195,8 @@
 
         var svg = d3.select("#Bchart").append("svg")
             .attr("width", width + margin.right + margin.left)
-            .attr("height", height + margin.top + margin.bottom)
+            .attr("height", height + margin.top + margin.bottom +4000 )
+            .style("overflow", "scroll")
           .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -178,7 +216,7 @@
         }
 
         //root.children.forEach(collapse);
-        console.log(root);
+       //console.log(root);
         //root.children[0].children[0].forEach(collapse);
         //root.children[0].children[1].forEach(collapse);
         //root.children[1].children[0].forEach(collapse);
@@ -189,6 +227,8 @@
 
 
         d3.select(self.frameElement).style("height", "800px");
+       
+        
 
 
         function update(source) {
@@ -311,6 +351,9 @@
             });
 
 
+
+
+           
 
 
             function mouseover() {

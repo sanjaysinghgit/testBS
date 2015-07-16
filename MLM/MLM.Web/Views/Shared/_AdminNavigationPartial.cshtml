@@ -1,27 +1,36 @@
 <ul class="nav navbar-nav navbar-left">
-    <li>
+    <!--<li>
         @Html.ActionLink("Home", "Index", "Home", null, new { target = "_self" })
-    </li>
+    </li>-->
+
     <li>
-        <a href="/#/">Manage</a>
+        <a href="/#/">Website Content</a>
+        <ul class="dropdown">
+            <li>
+                <a href="auth/Topacivar/entry">Tope Achivers</a>
+                 <a href="auth/News/Entry">News</a>
+            </li>
+          
+        </ul>
+    </li>
+
+    <li>
+        <a href="/#/">Account</a>
         <ul class="dropdown">
             <li>
                 <a href="auth/payout/list">Payouts</a>
             </li>
-            @*<li>
-                <a href="auth/agent/Details">My Details</a>
-            </li>*@
-            @*<li>
-                <a href="auth/agent/Tree/Binary">Agents Binary Tree</a>
-            </li>
             <li>
-                <a href="auth/agent/Tree/Generation">Agents Generation Tree</a>
-            </li>*@
+                <a href="auth/Manage/Agency">Manage Agency</a>
+            </li>
+           
         </ul>
     </li>
-    <li>
+    
+
+    <!--<li>
         @Html.ActionLink("Contact Us", "Contactus", "Home", null, new { target = "_self" })
 
-    </li>
+    </li>-->
 </ul>
 @Html.Partial("_LoginPartial")

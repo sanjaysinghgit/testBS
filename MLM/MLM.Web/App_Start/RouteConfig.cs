@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -18,6 +19,10 @@ namespace MLM.Web
                 url: "auth/{*.}",
                 defaults: new { controller = "Auth", action = "Index", id = UrlParameter.Optional }
             );
+
+            
+
+
 
             routes.MapRoute(
                 name: "Default",

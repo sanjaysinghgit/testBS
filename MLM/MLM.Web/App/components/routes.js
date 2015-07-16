@@ -121,14 +121,34 @@ function (
 
 
          ///////////////////// Top Achivers  /////////////////
-        .when('/auth/payout/list', {
-            templateUrl: Url.resolveLocal('components/payout/partial/payoutList.html'),
-            controller: 'payoutCtrl',
+        .when('/auth/Topacivar/entry', {
+            templateUrl: Url.resolveLocal('components/TopAchivar/Partial/TopachivarEntery.html'),
+            controller: 'TopAchiversCtrl',
+            //resolve: agentDependencies,
+            //cache: true
+        })
+       
+         ///////////////////// News List  /////////////////
+        .when('/auth/News/Entry', {
+            templateUrl: Url.resolveLocal('components/News/Partial/newsEntery.html'),
+            controller: 'newsCtrl',
+            //resolve: agentDependencies,
+            //cache: true
+        })
+        
+
+         ///////////////////// Manage agency /////////////////
+        .when('/auth/Manage/Agency', {
+            templateUrl: Url.resolveLocal('components/manageAgency/Partial/manageAgency.html'),
+            controller: 'manageAgencyCtrl',
             //resolve: agentDependencies,
             //cache: true
         })
 
-        
+
+
+       
+
 
         /////////////////////////////////
         // Handle incoming email links //

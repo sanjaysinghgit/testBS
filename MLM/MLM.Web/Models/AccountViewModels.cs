@@ -68,16 +68,26 @@ namespace MLM.Web.Models
         [Required]
         public string Name { get; set; }
 
+        public string FatherName { get; set; }
+
+
         [Required]
         public string Address { get; set; }
 
         [Required]
         public DateTime DOB { get; set; }
 
+        //public string FatherName { get; set; }
+
+       
+
         [Required]
         public string PhoneNumber { get; set; }
 
         public string Email { get; set; }
+
+        
+        
 
         [Required]
         public string SponsorCode { get; set; }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -11,17 +12,28 @@ using System.Web.Http;
 using MLM.Models;
 using MLM.DB;
 using System.Data.SqlClient;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Security.Claims;
+using MLM.Web.Models;
 
 namespace MLM.Controllers
 {
     public class AgentController : BaseApiController
     {
 
+         private MLMDbContext db ;
+         public UserManager<ApplicationUser> UserManager { get; private set; }
+
+
+
+
         private readonly AgentRepository<Agent> _AgentHandler;
         private readonly SPRepository<Agent> _SPRepository;
 
         public AgentController()
         {
+            db = new MLMDbContext("MLMCon");
             _AgentHandler = new AgentRepository<Agent>();
             _SPRepository = new SPRepository<Agent>();
         }
@@ -103,6 +115,77 @@ namespace MLM.Controllers
                 return String.Empty;
             }
         }
+
+
+        //Get All Agents With Name (Some Data From Application User)
+
+
+
+
+        [HttpGet]
+        public IEnumerable AllAgents()
+        {
+
+            IEnumerable q;
+            
+
+             
+             return    q = (from ag in db.Agents
+                          join user in db.Users
+
+                          on ag.Code
+                            equals
+                            user.UserName
+
+
+                          //on ag.Id equals user.AgentInfo
+                          orderby ag.ActivationDate
+
+                          select new
+                          {
+                              ag.Code,
+                              user.Name,
+                              user.FatherName,
+                              user.Address,
+                              user.PhoneNumber,
+                              user.UserName,
+                              ag.SponsorCode,
+                              ag.ActivationDate,
+                              ag.IntroducerCode,
+                              ag.Position,
+                              ag.LeftAgent,
+                              ag.RightAgent,
+                              ag.SaveIncomeStatus,
+                              ag.Status,
+                              ag.VoucherStatus
+
+                          }).ToList();
+              
+
+           
+
+
+      }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // //GET api/Agent/5
         //public Agent GetAgent(int id)

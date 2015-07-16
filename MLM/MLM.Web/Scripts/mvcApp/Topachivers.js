@@ -4,7 +4,7 @@
     $(document).ready(function () 
     {
         console.log("start Js--------------");
-        $.getJSON("/MLM.web/api/TopAchivars/Topachivers/",
+        $.getJSON("/MLM.web/api/TopAchivars/GetTopAchivars/",
        function (Data) {
  
            $.each(Data, function (key, val)

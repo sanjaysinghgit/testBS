@@ -1,14 +1,14 @@
 namespace MLM.Web.Migrations
 {
     using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using MLM.Models;
-using MLM.Models.Config;
-using MLM.Web.Models;
-using System;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using System.Linq;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using MLM.Models;
+    using MLM.Models.Config;
+    using MLM.Web.Models;
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<MLM.DB.MLMDbContext>
     {
@@ -32,7 +32,7 @@ using System.Linq;
             //    );
             //
 
-            
+
 
 
             //
@@ -324,7 +324,7 @@ using System.Linq;
                   SaveIncomeDaysDuration = 15,
                   SaveIncomeAmount = 100,
                   PairIncomeAmout = 500,
-                  PVAmount =   1,
+                  PVAmount = 1,
                   BinaryIncomeSetting = BinaryIncomeType.ByPair,
                   WeeklyBinaryCapping = 10000,
                   MonthlyBinaryCapping = 100000,
